@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './title-burger-queen.svg';
 import './App.css';
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.figma.com/file/zZ4K4yKr939l881WJY3LuU/Portafolio?node-id=0%3A1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Silvana esta aquí
         </a>
       </header>
     </div>
