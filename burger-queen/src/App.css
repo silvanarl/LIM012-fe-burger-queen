@@ -1,38 +1,48 @@
-.App {
+/* .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flex{
+  display: flex;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-background{
+  background-image: url(assets/fondo-burger-queen.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
 }
-
-.App-link {
-  color: #61dafb;
+.App-background::before{
+  content:'';
+  background-color: rgba(187, 186, 184, 0.267);
+  position: absolute;
+  width: 1366px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-logo{
+  position: relative;
+}
+.App-header{
+  top: 0;
+}
+.ButtonInit{
+  background-color: #F1C010;
+  width: 277px;
+  height: 70px;
+  border-radius: 25px;
 }
