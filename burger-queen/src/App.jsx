@@ -11,36 +11,37 @@ const ButtonInit = ({ value }) => (
     { value }
   </button>
 );
-
-const CompOrders = () => (
-  <div className="">
+const ContainerButton = () => (
+  <div className="container-button">Hola!</div>
+);
+const CompButtonOrders = () => (
+  <div className="container-button">
     <img src={waiter} className="comp-waiter" alt="waiter" />
     <ButtonInit value="Pedidos" />
   </div>
 );
-
-const CompKitchen = () => (
+const CompButtonKitchen = () => (
   <div className="">
     <img src={chef} className="comp-kitchen" alt="kitchen" />
     <ButtonInit value="Cocina" />
   </div>
 );
-
 const App = () => (
   <div className="App-background">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <img src={slogan} className="App-slogan" alt="slogan" />
-    </header>
-    <main>
-      <CompOrders />
-      <CompKitchen />
-    </main>
+    <div className="App-background-inside">
+      <header className="App-header relative">
+        <img src={logo} className="App-logo relative" alt="logo" />
+        <img src={slogan} className="App-slogan relative" alt="slogan" />
+      </header>
+      <main>
+        <ContainerButton />
+        <CompButtonOrders />
+        <CompButtonKitchen />
+      </main>
+    </div>
   </div>
 );
-
 ButtonInit.propTypes = {
   value: PropTypes.string.isRequired,
 };
-
 export default App;
