@@ -11,7 +11,7 @@
   display: flex;
 }
 .App-background{
-  background-image: url(assets/fondo-burger-queen.jpg);
+  background-image:url(assets/fondo-burger-queen.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -24,25 +24,48 @@
   font-size: calc(10px + 2vmin);
   color: white;
   position: relative;
+  box-sizing: border-box;
 }
-.App-background::before{
+/* .App-background::before{
   content:'';
   background-color: rgba(187, 186, 184, 0.267);
   position: absolute;
-  width: 1366px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   left: 0px;
   top: 0px;
-}
-.App-logo{
-  position: relative;
-}
+} */
 .App-header{
   top: 0;
 }
+.App-logo{
+  width: 100%;
+}
+.App-slogan{
+  width: 100%;
+}
 .ButtonInit{
   background-color: #F1C010;
-  width: 277px;
+  width: 180px;
   height: 70px;
   border-radius: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 23px;
+}
+.container-button{
+  border-radius: 25px;
+  border-color: #ffffff;
+  background-color: aqua;
+}
+/* .container-button::before {
+  content: '';
+  background-color: rgba(187, 186, 184, 0.267);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+} */
+.relative{
+  position: relative;
 }
