@@ -1,6 +1,7 @@
 .flexColumn{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  text-align: center;
 }
  .App-background{
   width: 100vw;
@@ -40,7 +41,7 @@
   width: 180px;
   height: 70px;
   border-radius: 25px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Roboto;
   font-size: 23px;
 }
 .container-button{
@@ -49,6 +50,13 @@
   border-radius: 30px;
   border: 7px solid #FFFFFF;
   background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin: 100px;
+  padding-top: 30px;
+}
+.comp-kitchen{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .flexRow{
   display: flex;
