@@ -11,19 +11,17 @@ const ButtonInit = ({ value }) => (
     { value }
   </button>
 );
-// const ContainerButton = () => (
-//   <div className="container-button">Hola!</div>
-// );
+
 const CompButtonOrders = () => (
   <div className="container-button">
     <img src={waiter} className="comp-waiter" alt="waiter" />
-    <ButtonInit value="Pedidos" />
+    <ButtonInit value="PEDIDOS" />
   </div>
 );
 const CompButtonKitchen = () => (
   <div className="container-button">
     <img src={chef} className="comp-kitchen" alt="kitchen" />
-    <ButtonInit value="Cocina" />
+    <ButtonInit value="COCINA" />
   </div>
 );
 const App = () => (
@@ -38,7 +36,6 @@ const App = () => (
         </div>
       </header>
       <main className="flexRow">
-        {/* <ContainerButton /> */}
         <CompButtonOrders />
         <CompButtonKitchen />
       </main>
