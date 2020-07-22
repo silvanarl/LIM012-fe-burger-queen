@@ -11,9 +11,9 @@ const ButtonInit = ({ value }) => (
     { value }
   </button>
 );
-const ContainerButton = () => (
-  <div className="container-button">Hola!</div>
-);
+// const ContainerButton = () => (
+//   <div className="container-button">Hola!</div>
+// );
 const CompButtonOrders = () => (
   <div className="container-button">
     <img src={waiter} className="comp-waiter" alt="waiter" />
@@ -21,7 +21,7 @@ const CompButtonOrders = () => (
   </div>
 );
 const CompButtonKitchen = () => (
-  <div className="">
+  <div className="container-button">
     <img src={chef} className="comp-kitchen" alt="kitchen" />
     <ButtonInit value="Cocina" />
   </div>
@@ -29,12 +29,16 @@ const CompButtonKitchen = () => (
 const App = () => (
   <div className="App-background">
     <div className="App-background-inside">
-      <header className="App-header relative">
-        <img src={logo} className="App-logo relative" alt="logo" />
-        <img src={slogan} className="App-slogan relative" alt="slogan" />
+      <header className="flexColumn">
+        <div className="App-logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="App-logo ">
+          <img src={slogan} alt="slogan" />
+        </div>
       </header>
-      <main>
-        <ContainerButton />
+      <main className="flexRow">
+        {/* <ContainerButton /> */}
         <CompButtonOrders />
         <CompButtonKitchen />
       </main>
