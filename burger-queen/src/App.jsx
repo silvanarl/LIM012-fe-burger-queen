@@ -11,7 +11,6 @@ const ButtonInit = ({ value }) => (
     { value }
   </button>
 );
-
 const CompButtonOrders = () => (
   <div className="container-button">
     <img src={waiter} className="comp-waiter" alt="waiter" />

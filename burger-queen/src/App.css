@@ -33,7 +33,10 @@
 .App-logo{
   width: 100%;
 }
-
+.comp-kitchen{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .ButtonInit{
   outline: none;
   border: none;
@@ -41,22 +44,19 @@
   width: 180px;
   height: 70px;
   border-radius: 25px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 23px;
 }
 .container-button{
   width: 300px;
-  height: 300px;
+  height: 280px;
   border-radius: 30px;
   border: 7px solid #FFFFFF;
   background: rgba(255, 255, 255, 0.7);
-  text-align: center;
   margin: 100px;
+  text-align: center;
   padding-top: 30px;
-}
-.comp-kitchen{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0%;
 }
 .flexRow{
   display: flex;
