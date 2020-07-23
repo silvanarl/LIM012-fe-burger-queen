@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logo from './assets/title-burger-queen.svg';
-import slogan from './assets/burger-queen-slogan.svg';
-import waiter from './assets/waiter.svg';
-import chef from './assets/chef-hat.svg';
-import './App.css';
+import logo from '../assets/title-burger-queen.svg';
+import slogan from '../assets/burger-queen-slogan.svg';
+import waiter from '../assets/waiter.svg';
+import chef from '../assets/chef-hat.svg';
+import '../App.css';
 
 const ButtonInit = ({ value }) => (
   <button type="button" className="ButtonInit">
@@ -24,7 +23,7 @@ const CompButtonKitchen = () => (
     <ButtonInit value="COCINA" />
   </div>
 );
-const App = () => (
+const Home = () => (
   <div className="App-background">
     <div className="App-background-inside">
       <header className="flexColumn">
@@ -45,4 +44,4 @@ const App = () => (
 ButtonInit.propTypes = {
   value: PropTypes.string.isRequired,
 };
-export default App;
+export default Home;
