@@ -62,3 +62,21 @@
   display: flex;
   flex-direction: row;
 }
+
+/* Waiter Choice */
+.headerMain{
+  background-color: #422112;
+  text-align: center center;
+  height: 150px;
+  margin: 0 auto;
+}
+.main-PlaceAndOrders{
+  background-color: #fbdd9173;
+  height: 100vh;
+}
+.waiter-choice{
+  width: 508px;
+  height: 692px;
+  background-color: #F1C010;
+  border-radius: 35px;
+}
