@@ -29,6 +29,7 @@ const Home = () => (
       <header className="flexColumn">
         <div className="App-logo">
           <img src={logo} alt="logo" />
+          <p>XD</p>
         </div>
         <div className="App-logo ">
           <img src={slogan} alt="slogan" />
