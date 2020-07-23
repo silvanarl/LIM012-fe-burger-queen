@@ -15,6 +15,7 @@ const PlaceOrders = () => (
 const ViewOrders = () => (
   <div className="waiter-choice">
     <img src={viewOrders} alt="" />
+    <p>XD Waiter!</p>
   </div>
 );
 
