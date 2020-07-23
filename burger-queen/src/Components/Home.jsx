@@ -7,7 +7,7 @@ import chef from '../assets/chef-hat.svg';
 import '../App.css';
 
 const ButtonInit = ({ value }) => (
-  <button type="button" className="ButtonInit">
+  <button type="button" className="ButtonInit buttonNone">
     { value }
   </button>
 );
@@ -29,7 +29,6 @@ const Home = () => (
       <header className="flexColumn">
         <div className="App-logo">
           <img src={logo} alt="logo" />
-          <div>new baby xD!!</div>
         </div>
         <div className="App-logo ">
           <img src={slogan} alt="slogan" />
