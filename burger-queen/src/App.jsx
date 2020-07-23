@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logo from './assets/title-burger-queen.svg';
 import slogan from './assets/burger-queen-slogan.svg';
