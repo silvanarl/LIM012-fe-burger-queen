@@ -1,18 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Components/Home';
+import './App.css';
 import PlaceAndViewOrders from './Components/Waiter-choice';
 
 const App = () => (
-  <div className="">
-    <Route
-      path="/home"
-      render={() => {
-        <Home />;
-      }}
-    />
-  </div>
+  <Router>
+    <div className="">
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/orders">
+          <PlaceAndViewOrders />
+        </Route>
+      </Switch>
+    </div>
+  </Router>
 );
 
 export default App;

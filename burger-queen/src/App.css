@@ -37,9 +37,11 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.ButtonInit{
+.buttonNone{
   outline: none;
   border: none;
+}
+.ButtonInit{
   background-color: #F1C010;
   width: 180px;
   height: 70px;
