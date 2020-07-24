@@ -7,18 +7,18 @@ import '../App.css';
 
 const PlaceOrders = () => (
   <div className="waiter-choice">
-    <span>REALIZAR PEDIDO</span>
-    <img src={placeOrders} alt="" />
-    <span>INGRESA NOMBRE</span>
+    <span className="strong-subtitle">REALIZAR PEDIDO</span>
+    <img className="placeOrders" src={placeOrders} alt="" />
+    <span className="subtitle">INGRESA NOMBRE</span>
     <input type="text" />
-    <button type="button">CONTINUAR</button>
+    <button type="button" className="ButtonInit">CONTINUAR</button>
   </div>
 );
 
 const ViewOrders = () => (
   <div>
     <button type="button" className="waiter-choice buttonNone">
-      <span>VER PEDIDOS LISTOS</span>
+      <span className="strong-subtitle special-subtitle">VER PEDIDOS LISTOS</span>
       <img src={viewOrders} alt="" />
     </button>
   </div>
