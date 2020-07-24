@@ -7,18 +7,18 @@ import '../App.css';
 
 const PlaceOrders = () => (
   <div className="waiter-choice">
-    <span className="strong-subtitle">REALIZAR PEDIDO</span>
+    <span className="strong-subtitle colorLetterBrown">REALIZAR PEDIDO</span>
     <img className="placeOrders" src={placeOrders} alt="" />
-    <span className="subtitle">INGRESA NOMBRE</span>
-    <input type="text" />
-    <button type="button" className="ButtonInit">CONTINUAR</button>
+    <span className="subtitle colorLetterBrown">INGRESA NOMBRE</span>
+    <input className="input-name" placeholder="Nombre del Cliente" type="text" />
+    <button type="button" className="button-brown buttonNone">CONTINUAR</button>
   </div>
 );
 
 const ViewOrders = () => (
   <div>
     <button type="button" className="waiter-choice buttonNone">
-      <span className="strong-subtitle special-subtitle">VER PEDIDOS LISTOS</span>
+      <span className="strong-subtitle special-subtitle colorLetterBrown">VER PEDIDOS LISTOS</span>
       <img src={viewOrders} alt="" />
     </button>
   </div>
@@ -26,9 +26,13 @@ const ViewOrders = () => (
 
 const PlaceAndViewOrders = () => (
   <div>
-    <header className="headerMain">
-      <img src={back} alt="Volver" />
-      <img src={logo} alt="logo" />
+    <header className="headerMain flexRow">
+      <div className="start">
+        <img src={back} alt="Volver" />
+      </div>
+      <div className="center">
+        <img src={logo} alt="logo" />
+      </div>
     </header>
     <main className="main-PlaceAndOrders flexRow">
       <PlaceOrders />
