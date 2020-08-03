@@ -1,6 +1,6 @@
 import React from 'react';
 import Background from './Background';
-import '../App.css';
+import '../css/app.css';
 
 const DoOrders = () => (
   <div>
