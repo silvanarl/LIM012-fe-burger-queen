@@ -3,7 +3,16 @@
   flex-direction: column;
   text-align: center;
 }
- .App-background{
+.start{
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.center{
+  width: 85vw;
+  text-align: center;
+  padding-top: 5px;
+}
+.App-background{
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -47,7 +56,7 @@
   height: 70px;
   border-radius: 25px;
   font-family: 'Roboto', sans-serif;
-  font-size: 23px;
+  font-size: 30px;
 }
 .container-button{
   width: 300px;
@@ -77,7 +86,6 @@
 }
 .main-PlaceAndOrders{
   background-color: #fbdd9173;
-  height: 100vh;
 }
 .waiter-choice{
   width: 508px;
@@ -93,6 +101,7 @@
   padding: 100px;
   padding-bottom: 40px;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 .special-subtitle{
   padding-top: 0%;
@@ -109,4 +118,27 @@
   padding-left: 125px;
   padding-right: 125px;
   font-family: 'Roboto', sans-serif;
+}
+.button-brown{
+  width: 160px;
+  height: 70px;
+  background-color: #422112;
+  font-size: 22px;
+  border-radius: 18px;
+  color: #FFFFFF;
+  padding: 10px;
+  margin-left: 170px;
+  margin-right: 170px;
+}
+.input-name{
+  width: 50%;
+  font-size: 25px;
+  height: 40px;
+  margin-left: 120px;
+  margin-top: 18px;
+  margin-right: 120px;
+  margin-bottom: 18px;
+}
+.colorLetterBrown{
+  color: #422112;
 }

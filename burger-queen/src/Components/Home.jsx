@@ -7,7 +7,7 @@ import chef from '../assets/chef-hat.svg';
 import '../App.css';
 
 const ButtonInit = ({ value }) => (
-  <button type="button" className="ButtonInit buttonNone">
+  <button type="button" className="ButtonInit buttonNone colorLetterBrown">
     { value }
   </button>
 );
