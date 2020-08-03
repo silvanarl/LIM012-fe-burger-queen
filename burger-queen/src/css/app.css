@@ -35,7 +35,7 @@
   height: 100%;
   position: absolute;
   background-position: center center;
-  background-image: url(assets/fondo-burger-queen.jpg);
+  background-image: url(../assets/fondo-burger-queen.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   filter: grayscale(35%);
