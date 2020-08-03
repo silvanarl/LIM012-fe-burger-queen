@@ -1,8 +1,7 @@
 import React from 'react';
-import back from '../assets/arrowBack.svg';
-import logo from '../assets/title-burger-queen.svg';
 import viewOrders from '../assets/checklist.svg';
 import placeOrders from '../assets/listEdit.svg';
+import Background from './Background';
 import '../css/app.css';
 
 const PlaceOrders = () => (
@@ -11,7 +10,7 @@ const PlaceOrders = () => (
     <img className="placeOrders" src={placeOrders} alt="" />
     <span className="subtitle colorLetterBrown">INGRESA NOMBRE</span>
     <input className="input-name" placeholder="Nombre del Cliente" type="text" />
-    <button type="button" className="button-brown buttonNone">CONTINUAR</button>
+    <a href="/orders-menu"><button type="button" className="button-brown buttonNone">CONTINUAR</button></a>
   </div>
 );
 
@@ -26,15 +25,8 @@ const ViewOrders = () => (
 
 const PlaceAndViewOrders = () => (
   <div>
-    <header className="headerMain flexRow">
-      <div className="start">
-        <a href="/home"><img src={back} alt="Volver" /></a>
-      </div>
-      <div className="center">
-        <img src={logo} alt="logo" />
-      </div>
-    </header>
-    <main className="main-PlaceAndOrders flexRow">
+    <Background />
+    <main className="main-PlaceAndOrders">
       <PlaceOrders />
       <ViewOrders />
     </main>
