@@ -28,7 +28,7 @@ const PlaceAndViewOrders = () => (
   <div>
     <header className="headerMain flexRow">
       <div className="start">
-        <img src={back} alt="Volver" />
+        <a href="/home"><img src={back} alt="Volver" /></a>
       </div>
       <div className="center">
         <img src={logo} alt="logo" />

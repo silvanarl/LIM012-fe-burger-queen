@@ -11,10 +11,13 @@ const ButtonInit = ({ value }) => (
     { value }
   </button>
 );
+
 const CompButtonOrders = () => (
   <div className="container-button">
-    <img src={waiter} className="comp-waiter" alt="waiter" />
-    <ButtonInit value="PEDIDOS" />
+    <a href="/orders">
+      <img src={waiter} className="comp-waiter" alt="waiter" />
+      <ButtonInit value="PEDIDOS" />
+    </a>
   </div>
 );
 const CompButtonKitchen = () => (
