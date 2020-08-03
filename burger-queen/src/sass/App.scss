@@ -1,3 +1,4 @@
+$backgroundYellow: #F1C010;
 .flexColumn{
   display: flex;
   flex-direction: column;
@@ -51,7 +52,7 @@
   border: none;
 }
 .ButtonInit{
-  background-color: #F1C010;
+  background-color: $backgroundYellow;
   width: 180px;
   height: 70px;
   border-radius: 25px;
@@ -90,7 +91,7 @@
 .waiter-choice{
   width: 508px;
   height: 692px;
-  background-color: #F1C010;
+  background-color: $backgroundYellow;
   border-radius: 35px;
   margin: 90px;
   box-sizing: border-box;
@@ -142,3 +143,5 @@
 .colorLetterBrown{
   color: #422112;
 }
+
+// Folder
