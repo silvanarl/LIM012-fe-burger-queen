@@ -5,7 +5,10 @@ import '../css/app.css';
 const DoOrders = () => (
   <div>
     <Background />
-    <h1>Hola</h1>
+    <div className="containerFolder flexRow">
+      <div className="folder" />
+      <div className="folderTwo" />
+    </div>
   </div>
 );
 export default DoOrders;
