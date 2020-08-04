@@ -171,7 +171,7 @@ $backgroundYellow: #F1C010;
 .containerAllFood {
   width: 595px;
   height: 580px;
-  background-color: #F1C010;
+  background-color: $backgroundYellow;
   border-radius: 35px;
   margin-left: 30px;
   margin-right: 30px;
@@ -184,7 +184,7 @@ $backgroundYellow: #F1C010;
   margin-top: 50px;
   height: 175px;
   border-radius: 25px;
-  background-color: #F1C010;
+  background-color: $backgroundYellow;
   box-sizing: border-box;
   display: inline-flex;
 }
