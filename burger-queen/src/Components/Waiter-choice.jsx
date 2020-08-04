@@ -1,7 +1,7 @@
 import React from 'react';
 import viewOrders from '../assets/checklist.svg';
 import placeOrders from '../assets/listEdit.svg';
-import Background from './Background';
+import Background from './Background.jsx';
 import '../css/app.css';
 
 const PlaceOrders = () => (
