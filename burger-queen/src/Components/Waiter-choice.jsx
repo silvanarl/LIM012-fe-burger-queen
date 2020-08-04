@@ -26,7 +26,7 @@ const ViewOrders = () => (
 const PlaceAndViewOrders = () => (
   <div>
     <Background />
-    <main className="main-PlaceAndOrders">
+    <main className="main-PlaceAndOrders flexRow">
       <PlaceOrders />
       <ViewOrders />
     </main>
