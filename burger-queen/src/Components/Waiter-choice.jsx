@@ -1,7 +1,7 @@
 import React from 'react';
 import viewOrders from '../assets/checklist.svg';
 import placeOrders from '../assets/listEdit.svg';
-import Background from './Background.jsx';
+import BackgroundBack from './Background-back.jsx';
 import '../css/app.css';
 
 const PlaceOrders = () => (
@@ -25,7 +25,7 @@ const ViewOrders = () => (
 
 const PlaceAndViewOrders = () => (
   <div>
-    <Background />
+    <BackgroundBack />
     <main className="main-PlaceAndOrders flexRow">
       <PlaceOrders />
       <ViewOrders />
