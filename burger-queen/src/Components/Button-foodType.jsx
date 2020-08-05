@@ -1,35 +1,36 @@
 import React from 'react';
 import '../css/app.css';
+import Menu from '../assets/menu-white.svg';
+import Drinks from '../assets/drinks-white.svg';
+import Breakfast from '../assets/breakfast-brown.svg';
 
 const ButtonFoodType = ({ food, icon }) => (
-  <div>
-    <span>{ food }</span>
+  <div className="flexColumn containerFood">
+    <span className="typeFood">{ food }</span>
     <img src={icon} alt={food} />
   </div>
 );
 
-const ButtonBreakfast = () => (
-  <div>
-    <button type="button">
-      <ButtonFoodType food="Desayuno" icon="../assets/breakfast-brown.svg" />
+export const ButtonBreakfast = () => (
+  <div className="flexColumn">
+    <button type="button" className="containerOptionFood">
+      <ButtonFoodType food="Desayuno" icon={Breakfast} />
     </button>
   </div>
 );
 
-const ButtonMenu = () => (
-  <div>
-    <button type="button">
-      <ButtonFoodType food="Menu" icon="../assets/menu-white.svg" />
+export const ButtonMenu = () => (
+  <div className="flexColumn">
+    <button type="button" className="containerOptionFood">
+      <ButtonFoodType food="Menu" icon={Menu} />
     </button>
   </div>
 );
 
-const ButtonDrinks = () => (
+export const ButtonDrinks = () => (
   <div>
-    <button type="button">
-      <ButtonFoodType food="Bebidas" icon="../assets/drinks-white.svg" />
+    <button type="button" className="containerOptionFood">
+      <ButtonFoodType food="Bebidas" icon={Drinks} />
     </button>
   </div>
 );
-
-export ;
