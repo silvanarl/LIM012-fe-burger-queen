@@ -23,7 +23,7 @@ const CompButtonOrders = () => (
 const CompButtonKitchen = () => (
   <div className="container-button">
     <img src={chef} className="comp-kitchen" alt="kitchen" />
-    <ButtonInit value="COCINAAA" />
+    <ButtonInit value="COCINA" />
   </div>
 );
 const Home = () => (

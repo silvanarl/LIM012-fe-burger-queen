@@ -1,4 +1,6 @@
 $backgroundYellow: #F1C010;
+$brown:#422112;
+
 .flexColumn{
   display: flex;
   flex-direction: column;
@@ -77,7 +79,7 @@ $backgroundYellow: #F1C010;
 
 /* Waiter Choice */
 .headerMain{
-  background-color: #422112;
+  background-color: $brown;
   text-align: center center;
   text-align: center;
   /* height: 150px; */
@@ -123,7 +125,7 @@ $backgroundYellow: #F1C010;
 .button-brown{
   width: 160px;
   height: 70px;
-  background-color: #422112;
+  background-color: $brown;
   font-size: 22px;
   border-radius: 18px;
   color: #FFFFFF;
@@ -141,7 +143,7 @@ $backgroundYellow: #F1C010;
   margin-bottom: 18px;
 }
 .colorLetterBrown{
-  color: #422112;
+  color: $brown;
 }
 
 // Folder
