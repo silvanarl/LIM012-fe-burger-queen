@@ -1,5 +1,6 @@
 $backgroundYellow: #F1C010;
 $brown:#422112;
+$ubuntu: 'Ubuntu', sans-serif;
 
 .flexColumn{
   display: flex;
@@ -151,14 +152,14 @@ $brown:#422112;
 
 .folder{
   background-color: $backgroundYellow;
-  width: 365px;
+  width: 366px;
   height: 780px;
   border-radius: 30px 30px 0px 30px;
   margin-top: 50px;
 }
 .folderTwo{
   background-color: $backgroundYellow;
-  width: 315px;
+  width: 316px;
   height: 680px;
   border-radius: 0 30px 30px 0px;
   margin-top: 150px;
@@ -189,4 +190,17 @@ $brown:#422112;
   background-color: $backgroundYellow;
   box-sizing: border-box;
   display: inline-flex;
+  border: none;
+}
+.typeFood{
+  color:$brown;
+  font-family: $ubuntu;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.containerFood{
+  padding: 5px;
 }
