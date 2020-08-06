@@ -11,6 +11,9 @@ const ButtonFoodType = ({ food, icon }) => (
   </div>
 );
 
+// Cuando haga click asiganarle la nueva clase
+// const clickButtonFood = () => ();
+
 export const ButtonBreakfast = () => (
   <div className="flexColumn">
     <button type="button" className="containerOptionFood">

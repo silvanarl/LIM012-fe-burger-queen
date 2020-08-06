@@ -189,14 +189,14 @@ $ubuntu: 'Ubuntu', sans-serif;
   margin-top: 50px;
   height: 175px;
   border-radius: 25px;
-  background-color: #422112;
+  background-color: $brown;
   box-sizing: border-box;
   display: inline-flex;
   border: none;
   outline: none;
   transition: all .5s;
 }
-.containerOptionFood:hover{
+.changeContainerOptionFood{
   background:$backgroundYellow;
   color: $brown;
 }

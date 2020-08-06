@@ -1,4 +1,5 @@
 const firebase = require('firebase/app');
+
 console.log(firebase);
 // Create a reference to the cities collection
 // const food = firebase.firestore().collection('food');
@@ -14,6 +15,6 @@ console.log(firebase);
 //       });
 //     }
 //   })
-//   .catch(err => {
+//   .catch((err) => {
 //     console.log('Error getting documents', err);
 //   });
