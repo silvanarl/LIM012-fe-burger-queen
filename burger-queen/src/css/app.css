@@ -176,11 +176,6 @@
   margin-top: 150px;
 }
 
-.containerFolder {
-  float: right;
-  margin-right: 50px;
-}
-
 .containerAllFood {
   width: 595px;
   height: 580px;
@@ -192,30 +187,48 @@
   box-sizing: border-box;
 }
 
+.margin-size40 {
+  margin-left: 40px;
+}
+
+.margin-size15 {
+  margin-left: 15px;
+}
+
 .containerOptionFood {
+  color: #F1C010;
   width: 185px;
   margin-left: 25px;
   margin-top: 50px;
   height: 175px;
   border-radius: 25px;
-  background-color: #F1C010;
+  background-color: #422112;
   box-sizing: border-box;
   display: inline-flex;
   border: none;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.containerOptionFood:hover {
+  background: #F1C010;
+  color: #422112;
 }
 
 .typeFood {
-  color: #422112;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
+  box-sizing: border-box;
   text-transform: uppercase;
   font-weight: bold;
   padding-top: 15px;
   padding-bottom: 10px;
+  text-decoration: none;
+  display: inline-flex;
 }
 
 .containerFood {
   padding: 5px;
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=app.css.map */

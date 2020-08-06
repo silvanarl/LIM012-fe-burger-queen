@@ -7,14 +7,18 @@ const DoOrders = () => (
   <div>
     <Background />
     <div className="flexRow">
-      <ButtonBreakfast />
-      <ButtonMenu />
-      <ButtonDrinks />
-    </div>
-    <div className="containerAllFood flexRow" />
-    <div className="containerFolder flexRow">
-      <div className="folder" />
-      <div className="folderTwo" />
+      <div className="flexColumn">
+        <div className="flexRow">
+          <ButtonBreakfast />
+          <ButtonMenu />
+          <ButtonDrinks />
+        </div>
+        <div className="containerAllFood" />
+      </div>
+      <div className="flexRow">
+        <div className="folder" />
+        <div className="folderTwo" />
+      </div>
     </div>
   </div>
 );

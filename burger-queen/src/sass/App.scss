@@ -164,11 +164,6 @@ $ubuntu: 'Ubuntu', sans-serif;
   border-radius: 0 30px 30px 0px;
   margin-top: 150px;
 }
-.containerFolder{
-  float: right;
-  margin-right: 50px;
-}
-
 //Container All Food
 
 .containerAllFood {
@@ -181,25 +176,41 @@ $ubuntu: 'Ubuntu', sans-serif;
   margin-top: 20px;
   box-sizing: border-box;
 }
+.margin-size40{
+  margin-left: 40px
+}
+.margin-size15{
+  margin-left: 15px;
+}
 .containerOptionFood {
+  color:$backgroundYellow;
   width: 185px;
   margin-left: 25px;
   margin-top: 50px;
   height: 175px;
   border-radius: 25px;
-  background-color: $backgroundYellow;
+  background-color: #422112;
   box-sizing: border-box;
   display: inline-flex;
   border: none;
+  outline: none;
+  transition: all .5s;
 }
-.typeFood{
-  color:$brown;
-  font-family: $ubuntu;
+.containerOptionFood:hover{
+  background:$backgroundYellow;
+  color: $brown;
+}
+  
+.typeFood {
+  font-family: "Ubuntu", sans-serif;
   font-size: 30px;
+  box-sizing: border-box;
   text-transform: uppercase;
   font-weight: bold;
   padding-top: 15px;
   padding-bottom: 10px;
+  text-decoration: none;
+  display: inline-flex;
 }
 .containerFood{
   padding: 5px;
