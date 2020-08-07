@@ -1,9 +1,13 @@
-const firebase = require('firebase/app');
-console.log(firebase);
-// Create a reference to the cities collection
-// const food = firebase.firestore().collection('food');
+// // import firestore from 'firebase/firestore';
+// // import firebase from 'firebase';
 
-// Create a query against the collection
+// // console.log(firebase);
+// // Create a reference to the cities collection
+// const db = firebase.firestore();
+// const food = firebase.firestore().collection('food');
+// console.log(db);
+
+// // Create a query against the collection
 // const foodMenu = food.where('menu', '==', true).get()
 //   .then((snapshot) => {
 //     if (snapshot.empty) {
@@ -17,3 +21,5 @@ console.log(firebase);
 //   .catch(err => {
 //     console.log('Error getting documents', err);
 //   });
+
+// export default foodMenu;
