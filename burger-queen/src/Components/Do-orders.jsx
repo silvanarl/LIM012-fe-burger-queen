@@ -3,6 +3,12 @@ import Background from './Background';
 import { ButtonMenu, ButtonBreakfast, ButtonDrinks } from './Button-foodType';
 import '../css/app.css';
 import foodMenu from '../controllers/firestore.controller';
+import {
+  ButtonCoffeeAndMilk,
+  ButtonAmericanCoffee,
+  ButtonHamAndCheeseSandwich,
+  ButtonNaturalJuice,
+} from './FoodByType';
 
 const DoOrders = () => (
   <div>
@@ -14,7 +20,12 @@ const DoOrders = () => (
           <ButtonMenu />
           <ButtonDrinks />
         </div>
-        <div className="containerAllFood" />
+        <div className="containerAllFood">
+          <ButtonAmericanCoffee />
+          <ButtonCoffeeAndMilk />
+          <ButtonHamAndCheeseSandwich />
+          <ButtonNaturalJuice />
+        </div>
       </div>
       <div className="flexRow">
         <div className="folder" />
