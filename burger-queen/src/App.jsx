@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import firebase from 'firebase';
-import { firebaseConfig } from './firebase-config';
 import Home from './Components/Home';
 import './css/app.css';
 import PlaceAndViewOrders from './Components/Waiter-choice';
