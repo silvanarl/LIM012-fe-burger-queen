@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyCWWbCiIGl-6RMTpiNCkDPj90jFcQQnvp8',
   authDomain: 'burger-queen-16c95.firebaseapp.com',
@@ -8,4 +11,4 @@ const firebaseConfig = {
   appId: '1:248833030673:web:ddf6fe7e9b2eca3ef20fb0',
 };
 
-export default firebaseConfig;
+export default firebase.initializeApp(firebaseConfig);

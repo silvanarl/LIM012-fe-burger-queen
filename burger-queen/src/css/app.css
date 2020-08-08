@@ -139,7 +139,7 @@
   background-color: #422112;
   font-size: 22px;
   border-radius: 18px;
-  color: #FFFFFF;
+  color: #fff;
   padding: 10px;
   margin-left: 170px;
   margin-right: 170px;
@@ -231,4 +231,19 @@
   padding: 5px;
 }
 
-/*# sourceMappingURL=app.css.map */
+.selectChange {
+  background-color: #F1C010;
+  color: #422112;
+}
+
+.buttonSelectFood {
+  background-color: #422112;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 25px;
+  width: 200px;
+  height: 130px;
+}
+
+/*# sourceMappingURL=App.css.map */
