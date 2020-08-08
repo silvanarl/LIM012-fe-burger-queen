@@ -2,7 +2,7 @@ import React from 'react';
 import Background from './Background';
 import { ButtonMenu, ButtonBreakfast, ButtonDrinks } from './Button-foodType';
 import '../css/app.css';
-import foodMenu from '../controllers/firestore.controller';
+// import breakfast from '../controllers/firestore.controller';
 import {
   ButtonCoffeeAndMilk,
   ButtonAmericanCoffee,
