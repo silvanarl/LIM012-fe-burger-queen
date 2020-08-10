@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/app.css';
 import Menu from '../assets/white-icons/menu-white.svg';
 import Drinks from '../assets/white-icons/drinks-white.svg';
-import Breakfast from '../assets/white-icons/breakfast-white.svg';
+// import Breakfast from '../assets/white-icons/breakfast-white.svg';
 
 const ButtonFoodType = ({ food, icon }) => (
   <div className="flexColumn containerFood">
@@ -14,7 +14,7 @@ const ButtonFoodType = ({ food, icon }) => (
 export const ButtonBreakfast = () => (
   <div className="flexColumn">
     <button type="button" className="containerOptionFood">
-      <ButtonFoodType food="Desayuno" icon={Breakfast} />
+      <ButtonFoodType food="Desayuno" icon="./src/assets/white-icons/breakfast-white.svg" />
     </button>
   </div>
 );
