@@ -1,66 +1,57 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/app.css';
+import Icons from './Icons';
 
-const ButtonSelectFood = ({ price, name }) => (
-  <li className="contButtonSelectFood">
-    <img src={`./assets/breakfast-icons/${name}.svg`} alt={name} />
+const ButtonSelectFood = ({ price, name, id }, index) => (
+  <div key={id} className="buttonSelectFood">
+    <img src={Icons[index].img} alt={name} />
     <span>{price}</span>
     <span>{name}</span>
-  </li>
+  </div>
 );
 
-export const VistaDePrueba = ({ arrData }) => {
-  const arrView = arrData.map(ButtonSelectFood);
+export const BreackfastView = ({ breakfastData }) => {
+  const arrView = breakfastData.map(ButtonSelectFood);
   return (
-    <ul>
+    <div>
       {arrView}
-    </ul>
+    </div>
   );
 };
 
-// export const ButtonAmericanCoffee = () => (
-//   <div>
-//     <button type="button" className="buttonSelectFood">
-//       <ButtonSelectFood icon={americanCoffee} price={5} name="juana" />
-//     </button>
-//   </div>
-// );
+export const MenuView = ({ menuData }) => {
+  const arrView = menuData.map(ButtonSelectFood);
+  return (
+    <div>
+      {arrView}
+    </div>
+  );
+};
 
-// export const ButtonCoffeeAndMilk = () => (
-//   <div>
-//     <button type="button" className="buttonSelectFood">
-//       <ButtonSelectFood icon={milkCoffee} price={5} name="burguer" />
-//     </button>
-//   </div>
-// );
+export const DrinksView = ({ drinksData }) => {
+  const arrView = drinksData.map(ButtonSelectFood);
+  return (
+    <div>
+      {arrView}
+    </div>
+  );
+};
 
-// export const ButtonHamAndCheeseSandwich = () => (
-//   <div>
-//     <button type="button" className="buttonSelectFood">
-//       <ButtonSelectFood icon={sandwich} price={5} name="burguer" />
-//     </button>
-//   </div>
-// );
+ButtonSelectFood.propTypes = {
+  price: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
-// export const ButtonNaturalJuice = () => (
-//   <div>
-//     <button type="button" className="buttonSelectFood">
-//       <ButtonSelectFood icon={natJuice} price={5} name="burguer" />
-//     </button>
-//   </div>
-// );
+BreackfastView.propTypes = {
+  breakfastData: PropTypes.arrayOf.isRequired,
+};
 
-// export const ButtonBurgerSimple = () => (
-//   <div>
-//     <button type="button" className="buttonSelectFood">
-//       <ButtonSelectFood icon={simpleBurger} price={5} name="burguer" />
-//     </button>
-//   </div>
-// );
-// export const ButtonBurgerDouble = () => (
-//   <div>
-//     <button type="button">
-//       <ButtonSelectFood icon={simpleBurger} price={10} name="cafe" />
-//     </button>
-//   </div>
-// );
+MenuView.propTypes = {
+  menuData: PropTypes.arrayOf.isRequired,
+};
+
+DrinksView.propTypes = {
+  drinksData: PropTypes.arrayOf.isRequired,
+};
