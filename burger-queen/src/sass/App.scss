@@ -138,13 +138,18 @@ $white: #fff;
   margin-right: 170px;
 }
 .input-name{
-  width: 50%;
-  font-size: 25px;
+  width: 250px;
+  font-size: 20px;
   height: 40px;
-  margin-left: 120px;
-  margin-top: 18px;
-  margin-right: 120px;
-  margin-bottom: 18px;
+  margin: 10px, 0, 5px, 0;
+  border-radius: 5px;
+}
+.clientValue{
+  font-size: 25px;
+  color: $brown;
+  span{
+    font-size: 30px;
+  }
 }
 .colorLetterBrown{
   color: $brown;
@@ -231,5 +236,11 @@ $white: #fff;
   width: 200px;
   height: 130px;
 }
-.contButtonSelectFood{
+.orderInfo{
+  position: absolute;
+  z-index: 1;
+  width: 650px;
+  height: 750px;
+  margin-top: 50px;
+  padding: 15px;
 }
