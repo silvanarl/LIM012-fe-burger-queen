@@ -21,7 +21,7 @@ export const ButtonBreakfast = () => (
 
 export const ButtonMenu = () => (
   <div className="flexColumn">
-    <button type="button" className="containerOptionFood margin-size40">
+    <button type="button" className="containerOptionFood">
       <ButtonFoodType food="Menu" icon={Menu} />
     </button>
   </div>

@@ -19,6 +19,12 @@ const DoOrders = () => {
   const [menuData, setMenuData] = useState([]);
   const [drinksData, setDrinksData] = useState([]);
   const [client, setClient] = useState('');
+  const updateClient = (e) => setClient(e.target.value);
+  const buttonContinue = () => {
+    if (client !== '') {
+      console.log('hay algo escrito');
+    }
+  };
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
@@ -48,10 +54,21 @@ const DoOrders = () => {
           </div>
         </div>
         <div className="flexRow">
-          <div className="folder">
-            <Client client={client} />
-          </div>
+          <div className="folder" />
           <div className="folderTwo" />
+          <div className="orderInfo">
+            <input
+              className="input-name"
+              placeholder="Cliente"
+              type="text"
+              value={client}
+              onChange={updateClient}
+            />
+            <p className="clientValue">
+              PARA:
+              <span>{client}</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
