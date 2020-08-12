@@ -210,7 +210,7 @@
   transition: all 0.5s;
 }
 
-.containerOptionFood:hover {
+.changeContainerOptionFood {
   background: #F1C010;
   color: #422112;
 }
@@ -246,4 +246,4 @@
   height: 130px;
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=app.css.map */

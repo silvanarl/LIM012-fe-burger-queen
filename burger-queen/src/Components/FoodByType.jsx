@@ -2,8 +2,9 @@ import React from 'react';
 import '../css/app.css';
 
 const ButtonSelectFood = ({ price, name }) => (
-  <li className="contButtonSelectFood">
-    <img src={`./assets/breakfast-icons/${name}.svg`} alt={name} />
+  <li>
+    <img src={'../assets/breakfast-icons/cafe americano.svg'} alt={name} />
+    <img src={require('../assets/breakfast-icons/cafe-americano.svg')} alt={name} />
     <span>{price}</span>
     <span>{name}</span>
   </li>

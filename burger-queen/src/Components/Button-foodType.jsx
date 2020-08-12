@@ -13,10 +13,13 @@ const ButtonFoodType = ({ food, icon }) => (
 
 // Cuando haga click asiganarle la nueva clase
 // const clickButtonFood = () => ();
+const afterClickButton = (event) =>{
+  
+};
 
 export const ButtonBreakfast = () => (
   <div className="flexColumn">
-    <button type="button" className="containerOptionFood">
+    <button onClick={afterClickButton} type="button" className="containerOptionFood">
       <ButtonFoodType food="Desayuno" icon="./src/assets/white-icons/breakfast-white.svg" />
     </button>
   </div>
