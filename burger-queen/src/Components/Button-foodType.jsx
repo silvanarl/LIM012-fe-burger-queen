@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/app.css';
 import Menu from '../assets/white-icons/menu-white.svg';
 import Drinks from '../assets/white-icons/drinks-white.svg';
-// import Breakfast from '../assets/white-icons/breakfast-white.svg';
+import Breakfast from '../assets/white-icons/breakfast-white.svg';
 
 const ButtonFoodType = ({ food, icon }) => (
   <div className="flexColumn containerFood">
@@ -13,14 +13,17 @@ const ButtonFoodType = ({ food, icon }) => (
 
 // Cuando haga click asiganarle la nueva clase
 // const clickButtonFood = () => ();
-const afterClickButton = (event) =>{
-  
-};
+// const buttonBreakfastId = document.querySelector('optionButtonBreakfast');
+// console.log(buttonBreakfastId);
+// const afterClickButton = () => {
+//   buttonBreakfastId.classList.remove('containerOptionFood');
+//   buttonBreakfastId.classList.add('changeContainerOptionFood');
+// };
 
 export const ButtonBreakfast = () => (
   <div className="flexColumn">
-    <button onClick={afterClickButton} type="button" className="containerOptionFood">
-      <ButtonFoodType food="Desayuno" icon="./src/assets/white-icons/breakfast-white.svg" />
+    <button id="optionButtonBreakfast" type="button" className="containerOptionFood">
+      <ButtonFoodType food="Desayuno" icon={Breakfast} />
     </button>
   </div>
 );
