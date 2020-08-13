@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Background from './Background';
-import Client from './Client';
+import AddIcon from '../assets/orderComponentIcons/add-icon.svg';
+import LessIcon from '../assets/orderComponentIcons/less-icon.svg';
+import DeleteIcon from '../assets/orderComponentIcons/delete-icon.svg';
 import { ButtonMenu, ButtonBreakfast, ButtonDrinks } from './Button-foodType';
 import '../css/app.css';
 import {
@@ -20,11 +22,7 @@ const DoOrders = () => {
   const [drinksData, setDrinksData] = useState([]);
   const [client, setClient] = useState('');
   const updateClient = (e) => setClient(e.target.value);
-  const buttonContinue = () => {
-    if (client !== '') {
-      console.log('hay algo escrito');
-    }
-  };
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
@@ -68,6 +66,31 @@ const DoOrders = () => {
               PARA:
               <span>{client}</span>
             </p>
+            <div className="containerOrderList">
+              <div className="orderList flexRow">
+                <button type="button" className="buttonNone">
+                  <img src={AddIcon} alt="" />
+                </button>
+                <div className="containerQuantityByProducts">
+                  <span>{1}</span>
+                </div>
+                <button type="button" className="buttonNone">
+                  <img src={LessIcon} alt="" />
+                </button>
+                <div className="spaceInter">
+                  <span className="fontSize25 upperText">hamburquesa simple</span>
+                </div>
+                <div className="spaceInter">
+                  <span className="fontSize25 upperText">
+                    S/
+                    {15}
+                  </span>
+                </div>
+                <button type="button" className="buttonNone">
+                  <img src={DeleteIcon} alt="" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
