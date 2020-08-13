@@ -5,10 +5,13 @@ import Icons from './Icons';
 
 const ButtonSelectFood = ({ price, name, id }, index) => (
   <div key={id} className="buttonSelectFood">
-    <button type="button">
+    <button type="button" className="buttonNone buttonByProduct">
       <img src={Icons[index].img} alt={name} />
-      <span>{price}</span>
-      <span>{name}</span>
+      <span>
+        S/
+        {price}
+      </span>
+      <span className="upperText">{name}</span>
     </button>
   </div>
 );
