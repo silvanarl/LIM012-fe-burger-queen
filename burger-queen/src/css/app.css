@@ -57,6 +57,7 @@
 .buttonNone {
   outline: none;
   border: none;
+  background-color: transparent;
 }
 
 .ButtonInit {
@@ -90,7 +91,6 @@
   background-color: #422112;
   text-align: center center;
   text-align: center;
-  /* height: 150px; */
   width: 100vw;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -147,18 +147,16 @@
 
 .input-name {
   width: 250px;
-  font-size: 20px;
+  font-size: 25px;
   height: 40px;
-  margin: 10px, 0, 5px, 0;
+  margin: 3px;
   border-radius: 5px;
 }
 
 .clientValue {
-  font-size: 25px;
-  color: #422112;
-}
-.clientValue span {
   font-size: 30px;
+  color: #422112;
+  margin: 10px;
 }
 
 .colorLetterBrown {
@@ -177,9 +175,9 @@
 .folderTwo {
   background-color: #F1C010;
   width: 316px;
-  height: 680px;
+  height: 660px;
   border-radius: 0 30px 30px 0px;
-  margin-top: 150px;
+  margin-top: 170px;
 }
 
 .containerAllFood {
@@ -259,6 +257,49 @@
   height: 750px;
   margin-top: 50px;
   padding: 15px;
+}
+
+.containerOrderList {
+  margin-top: 20px;
+}
+
+.orderList {
+  background-color: #422112;
+  color: #fff;
+  width: 640px;
+  height: 68px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.containerQuantityByProducts {
+  height: 40px;
+  width: 30px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.containerQuantityByProducts span {
+  color: #422112;
+  font-size: 25px;
+}
+
+.buttonByProduct {
+  height: 100%;
+  font-size: 22px;
+  color: #fff;
+}
+
+.upperText {
+  text-transform: uppercase;
+}
+
+.fontSize25 {
+  font-size: 25px;
+}
+
+.spaceInter {
+  margin-right: 18px;
+  margin-top: 15px;
 }
 
 /*# sourceMappingURL=app.css.map */
