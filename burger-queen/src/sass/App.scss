@@ -199,10 +199,10 @@ $white: #fff;
   outline: none;
   transition: all .5s;
 }
-.containerOptionFood:hover{
-  background:$backgroundYellow;
-  color: $brown;
-}
+// .containerOptionFood:hover{
+//   background:$backgroundYellow;
+//   color: $brown;
+// }
   
 .typeFood {
   font-family: $ubuntu;
@@ -274,4 +274,13 @@ $white: #fff;
 .spaceInter{
   margin-right: 18px;
   margin-top: 15px;
+}
+.toggleClass{
+  background-color: $backgroundYellow;
+  color: $brown;
+  border-radius: 25px;
+}
+.sendAndNullButton{
+ background-color: $brown;
+ color:white;
 }
