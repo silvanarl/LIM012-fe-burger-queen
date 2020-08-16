@@ -9,6 +9,7 @@ import {
   getPriceAndNameBreakfast,
   getPriceAndNameMenu,
   getPriceAndNameDrinks,
+  sendClient,
 } from '../controllers/firestore.controller';
 import {
   BreackfastView,
@@ -20,9 +21,36 @@ const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
   const [menuData, setMenuData] = useState([]);
   const [drinksData, setDrinksData] = useState([]);
-  const [client, setClient] = useState('');
-  const updateClient = (e) => setClient(e.target.value);
-  const [order, setOrder] = useState({});
+  const initialStateClient = {
+    name: '',
+  };
+  const [client, setClient] = useState(initialStateClient);
+  const updateClient = (e) => {
+    const { name, value } = e.target;
+    console.log(e.target);
+    setClient({ [name]: value });
+  };
+
+  const sendFirestore = (e) => {
+    sendClient(client);
+    setClient({ ...initialStateClient });
+  };
+  const [order, setOrder] = useState({
+    items: [{
+      amount: 0,
+      id_food: '',
+    }],
+    total_price: 0,
+  });
+  const [count, setCount] = useState(0);
+  const addOne = () => setCount(count + 1);
+  const lessOne = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+  const [amount, setAmount] = useState(0); // precio por producto
+  // const [products, setProducts] = useState();
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
@@ -41,7 +69,7 @@ const DoOrders = () => {
           </div>
           <div className="containerAllFood">
             <div>
-              <BreackfastView breakfastData={breakfastData} />
+              <BreackfastView breakfastData={breakfastData} /> {/* usar renderizado condicional */}
             </div>
             <div>
               <MenuView menuData={menuData} />
@@ -59,35 +87,59 @@ const DoOrders = () => {
               className="input-name"
               placeholder="Cliente"
               type="text"
-              value={client}
+              name="name"
+              value={client.name}
               onChange={updateClient}
             />
             <p className="clientValue">
               PARA:
-              <span>{client}</span>
+              <span>{client.name}</span>
             </p>
             <div className="containerOrderList">
-              <div className="orderList flexRow">
-                <button type="button" className="buttonNone">
-                  <img src={AddIcon} alt="" />
+              <div className="containOrderList">
+                <div className="orderList flexRow">
+                  <button type="button" onClick={addOne} className="buttonNone">
+                    <img src={AddIcon} alt="" />
+                  </button>
+                  <div className="containerQuantityByProducts">
+                    <span>{count}</span>
+                  </div>
+                  <button type="button" onClick={lessOne} className="buttonNone">
+                    <img src={LessIcon} alt="" />
+                  </button>
+                  <div className="spaceInter">
+                    <span className="fontSize25 upperText">hamburquesa simple</span>
+                  </div>
+                  <div className="spaceInter">
+                    <span className="fontSize25 upperText">
+                      S/
+                      {15}
+                    </span>
+                  </div>
+                  <button type="button" className="buttonNone">
+                    <img src={DeleteIcon} alt="" />
+                  </button>
+                </div>
+              </div>
+              <div className="">
+                <span>
+                  TOTAL DE PEDIDO: S/
+                  {amount}
+                </span>
+              </div>
+              <div className="">
+                <button
+                  className="buttonNone sendAndNullButton"
+                  type="button"
+                  onClick={sendFirestore}
+                >
+                  ENVIAR
                 </button>
-                <div className="containerQuantityByProducts">
-                  <span>{1}</span>
-                </div>
-                <button type="button" className="buttonNone">
-                  <img src={LessIcon} alt="" />
-                </button>
-                <div className="spaceInter">
-                  <span className="fontSize25 upperText">hamburquesa simple</span>
-                </div>
-                <div className="spaceInter">
-                  <span className="fontSize25 upperText">
-                    S/
-                    {15}
-                  </span>
-                </div>
-                <button type="button" className="buttonNone">
-                  <img src={DeleteIcon} alt="" />
+                <button
+                  className="buttonNone sendAndNullButton"
+                  type="button"
+                >
+                  ANULAR
                 </button>
               </div>
             </div>

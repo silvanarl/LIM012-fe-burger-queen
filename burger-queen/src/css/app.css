@@ -214,11 +214,6 @@
   transition: all 0.5s;
 }
 
-.containerOptionFood:hover {
-  background: #F1C010;
-  color: #422112;
-}
-
 .typeFood {
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
@@ -300,6 +295,17 @@
 .spaceInter {
   margin-right: 18px;
   margin-top: 15px;
+}
+
+.toggleClass {
+  background-color: #F1C010;
+  color: #422112;
+  border-radius: 25px;
+}
+
+.sendAndNullButton {
+  background-color: #422112;
+  color: white;
 }
 
 /*# sourceMappingURL=app.css.map */
