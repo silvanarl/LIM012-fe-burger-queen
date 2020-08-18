@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import '../css/app.css';
 import Icons from './Icons';
 
-const ButtonSelectFood = ({ price, name, id }, index) => (
+const ButtonSelectFood = ({ price, name, id }, index, functionx) => (
   <div key={id} className="buttonSelectFood">
-    <button type="button" className="buttonNone buttonByProduct">
+    <button type="button" className="buttonNone buttonByProduct" onClick={() => functionx(price, name, id)}>
       <img src={Icons[index].img} alt={name} />
       <span>
         S/
@@ -16,8 +16,8 @@ const ButtonSelectFood = ({ price, name, id }, index) => (
   </div>
 );
 
-export const BreackfastView = ({ breakfastData }) => {
-  const arrView = breakfastData.map(ButtonSelectFood);
+export const BreackfastView = ({ breakfastData, functionx }) => {
+  const arrView = breakfastData.map((obj, index) => ButtonSelectFood(obj, index, functionx));
   return (
     <div>
       {arrView}
@@ -51,6 +51,7 @@ ButtonSelectFood.propTypes = {
 
 BreackfastView.propTypes = {
   breakfastData: PropTypes.arrayOf.isRequired,
+  functionx: PropTypes.func.isRequired,
 };
 
 MenuView.propTypes = {
