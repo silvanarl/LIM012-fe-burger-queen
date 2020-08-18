@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/app.css';
 import Menu from '../assets/white-icons/menu-white.svg';
 import Drinks from '../assets/white-icons/drinks-white.svg';
@@ -14,32 +15,43 @@ const ButtonFoodType = ({ food, icon }) => (
   </div>
 );
 
-export const ButtonBreakfast = () => {
+export const ButtonBreakfast = ({ filterSelectType }) => {
   const handleClick = (event) => {
     const buttonElement = event.target;
     buttonElement.classList.toggle('toggleClass');
   };
   return (
-    <div className="flexColumn">
-      <button type="button" onClick={handleClick} className="containerOptionFood">
+    <div className="flexColumn" id="0">
+      <button type="button" className="containerOptionFood" id="0" onClick={() => filterSelectType('0')}>
         <ButtonFoodType food="Desayuno" icon={Breakfast} />
       </button>
     </div>
   );
 };
 
-export const ButtonMenu = () => (
+export const ButtonMenu = ({ filterSelectType }) => (
   <div className="flexColumn">
-    <button type="button" className="containerOptionFood">
+    <button type="button" className="containerOptionFood" id="1" onClick={() => filterSelectType('1')}>
       <ButtonFoodType food="Menu" icon={Menu} />
     </button>
   </div>
 );
 
-export const ButtonDrinks = () => (
-  <div>
-    <button type="button" className="containerOptionFood">
+export const ButtonDrinks = ({ filterSelectType }) => (
+  <div className="flexColumn">
+    <button type="button" className="containerOptionFood" onClick={() => filterSelectType('2')}>
       <ButtonFoodType food="Bebidas" icon={Drinks} />
     </button>
   </div>
 );
+ButtonBreakfast.propTypes = {
+  filterSelectType: PropTypes.func.isRequired,
+};
+
+ButtonMenu.propTypes = {
+  filterSelectType: PropTypes.func.isRequired,
+};
+
+ButtonDrinks.propTypes = {
+  filterSelectType: PropTypes.func.isRequired,
+};
