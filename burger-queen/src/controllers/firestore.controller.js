@@ -9,7 +9,7 @@ export const getPriceAndNameBreakfast = () => food.where('breakfast', '==', true
     const breakfastObj = {
       price: doc.data().price,
       name: doc.data().name,
-      id: doc.data().id,
+      id: doc.id,
     };
     foodBreakfast.push(breakfastObj);
   });
@@ -25,7 +25,7 @@ export const getPriceAndNameMenu = () => food.where('menu', '==', true).get().th
     const menuObj = {
       price: doc.data().price,
       name: doc.data().name,
-      id: doc.data().id,
+      id: doc.id,
     };
     foodMenu.push(menuObj);
   });
@@ -38,7 +38,7 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
     const drinksObj = {
       price: doc.data().price,
       name: doc.data().name,
-      id: doc.data().id,
+      id: doc.id,
     };
     foodDrinks.push(drinksObj);
   });

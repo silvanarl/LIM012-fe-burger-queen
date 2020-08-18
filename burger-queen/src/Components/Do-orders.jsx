@@ -21,25 +21,27 @@ const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
   const [menuData, setMenuData] = useState([]);
   const [drinksData, setDrinksData] = useState([]);
+
+  const [selectType, setSelectType] = useState('0');
+  const filterSelectType = (str) => {
+    setSelectType(str);
+  };
   const initialStateClient = {
     name: '',
   };
   const [client, setClient] = useState(initialStateClient);
   const updateClient = (e) => {
     const { name, value } = e.target;
-    console.log(e.target);
     setClient({ [name]: value });
   };
 
-  const sendFirestore = (e) => {
+  const sendFirestore = () => {
     sendClient(client);
     setClient({ ...initialStateClient });
   };
   const [order, setOrder] = useState({
-    items: [{
-      amount: 0,
-      id_food: '',
-    }],
+    client,
+    items: [],
     total_price: 0,
   });
   const [count, setCount] = useState(0);
@@ -49,8 +51,31 @@ const DoOrders = () => {
       setCount(count - 1);
     }
   };
-  const [amount, setAmount] = useState(0); // precio por producto
-  // const [products, setProducts] = useState();
+  const [amount, setAmount] = useState(0);
+
+  const functionx = (price, name, id) => {
+    const item = {
+      amount,
+      price,
+      name,
+      id,
+    };
+    setOrder((prevState) => ({
+      ...prevState,
+      items: [item],
+    }));
+  };
+
+  const renderComponentTypeFood = () => {
+    switch (selectType) {
+      case '1':
+        return <MenuView menuData={menuData} />;
+      case '2':
+        return <DrinksView drinksData={drinksData} />;
+      default:
+        return <BreackfastView breakfastData={breakfastData} functionx={functionx} />;
+    }
+  };
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
@@ -63,20 +88,12 @@ const DoOrders = () => {
       <div className="flexRow">
         <div className="flexColumn">
           <div className="flexRow">
-            <ButtonBreakfast />
-            <ButtonMenu />
-            <ButtonDrinks />
+            <ButtonBreakfast filterSelectType={filterSelectType} />
+            <ButtonMenu filterSelectType={filterSelectType} />
+            <ButtonDrinks filterSelectType={filterSelectType} />
           </div>
           <div className="containerAllFood">
-            <div>
-              <BreackfastView breakfastData={breakfastData} /> {/* usar renderizado condicional */}
-            </div>
-            <div>
-              <MenuView menuData={menuData} />
-            </div>
-            <div>
-              <DrinksView drinksData={drinksData} />
-            </div>
+            {renderComponentTypeFood()}
           </div>
         </div>
         <div className="flexRow">
@@ -97,29 +114,33 @@ const DoOrders = () => {
             </p>
             <div className="containerOrderList">
               <div className="containOrderList">
-                <div className="orderList flexRow">
-                  <button type="button" onClick={addOne} className="buttonNone">
-                    <img src={AddIcon} alt="" />
-                  </button>
-                  <div className="containerQuantityByProducts">
-                    <span>{count}</span>
+                {
+                order.items.map((obj) => (
+                  <div className="orderList flexRow" key={obj.id}>
+                    <button type="button" onClick={addOne} className="buttonNone">
+                      <img src={AddIcon} alt="" />
+                    </button>
+                    <div className="containerQuantityByProducts">
+                      <span>{count}</span>
+                    </div>
+                    <button type="button" onClick={lessOne} className="buttonNone">
+                      <img src={LessIcon} alt="" />
+                    </button>
+                    <div className="spaceInter">
+                      <span className="fontSize25 upperText">{obj.name}</span>
+                    </div>
+                    <div className="spaceInter">
+                      <span className="fontSize25 upperText">
+                        S/
+                        {obj.price}
+                      </span>
+                    </div>
+                    <button type="button" className="buttonNone">
+                      <img src={DeleteIcon} alt="" />
+                    </button>
                   </div>
-                  <button type="button" onClick={lessOne} className="buttonNone">
-                    <img src={LessIcon} alt="" />
-                  </button>
-                  <div className="spaceInter">
-                    <span className="fontSize25 upperText">hamburquesa simple</span>
-                  </div>
-                  <div className="spaceInter">
-                    <span className="fontSize25 upperText">
-                      S/
-                      {15}
-                    </span>
-                  </div>
-                  <button type="button" className="buttonNone">
-                    <img src={DeleteIcon} alt="" />
-                  </button>
-                </div>
+                ))
+              }
               </div>
               <div className="">
                 <span>

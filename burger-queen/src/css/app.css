@@ -306,6 +306,10 @@
 .sendAndNullButton {
   background-color: #422112;
   color: white;
+  width: 140px;
+  height: 60px;
+  border-radius: 20px;
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=app.css.map */

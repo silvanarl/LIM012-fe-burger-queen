@@ -5,6 +5,7 @@ import Delete from '../assets/orderComponentIcons/delete-icon.svg';
 
 const Order = () => {
   const [count, setCount] = useState(1);
+  
   return (
     <div>
       <button type="button">
