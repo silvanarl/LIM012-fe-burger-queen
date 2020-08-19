@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import '../css/app.css';
 import Icons from './Icons';
 
-const ButtonSelectFood = ({ price, name, id }, index) => (
+const ButtonSelectFood = ({ price, name, id }, index, addPropertiesToOrder) => (
   <div key={id} className="buttonSelectFood">
-    <button type="button" className="buttonNone buttonByProduct">
+    <button type="button" className="buttonNone buttonByProduct" onClick={() => addPropertiesToOrder(price, name, id)}>
       <img src={Icons[index].img} alt={name} />
       <span>
         S/
@@ -16,8 +16,12 @@ const ButtonSelectFood = ({ price, name, id }, index) => (
   </div>
 );
 
-export const BreackfastView = ({ breakfastData }) => {
-  const arrView = breakfastData.map(ButtonSelectFood);
+export const BreackfastView = ({ breakfastData, addPropertiesToOrder }) => {
+  const arrView = breakfastData.map((obj, index) => ButtonSelectFood(
+    obj,
+    index,
+    addPropertiesToOrder,
+  ));
   return (
     <div>
       {arrView}
@@ -25,8 +29,12 @@ export const BreackfastView = ({ breakfastData }) => {
   );
 };
 
-export const MenuView = ({ menuData }) => {
-  const arrView = menuData.map(ButtonSelectFood);
+export const MenuView = ({ menuData, addPropertiesToOrder }) => {
+  const arrView = menuData.map((obj, index) => ButtonSelectFood(
+    obj,
+    index,
+    addPropertiesToOrder,
+  ));
   return (
     <div>
       {arrView}
@@ -34,8 +42,12 @@ export const MenuView = ({ menuData }) => {
   );
 };
 
-export const DrinksView = ({ drinksData }) => {
-  const arrView = drinksData.map(ButtonSelectFood);
+export const DrinksView = ({ drinksData, addPropertiesToOrder }) => {
+  const arrView = drinksData.map((obj, index) => ButtonSelectFood(
+    obj,
+    index,
+    addPropertiesToOrder,
+  ));
   return (
     <div>
       {arrView}
@@ -51,12 +63,15 @@ ButtonSelectFood.propTypes = {
 
 BreackfastView.propTypes = {
   breakfastData: PropTypes.arrayOf.isRequired,
+  addPropertiesToOrder: PropTypes.func.isRequired,
 };
 
 MenuView.propTypes = {
   menuData: PropTypes.arrayOf.isRequired,
+  addPropertiesToOrder: PropTypes.func.isRequired,
 };
 
 DrinksView.propTypes = {
   drinksData: PropTypes.arrayOf.isRequired,
+  addPropertiesToOrder: PropTypes.func.isRequired,
 };
