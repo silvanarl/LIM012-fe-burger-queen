@@ -9,6 +9,7 @@ export const getPriceAndNameBreakfast = () => food.where('breakfast', '==', true
     const breakfastObj = {
       price: doc.data().price,
       name: doc.data().name,
+      id: doc.data().id,
     };
     foodBreakfast.push(breakfastObj);
   });
@@ -24,6 +25,7 @@ export const getPriceAndNameMenu = () => food.where('menu', '==', true).get().th
     const menuObj = {
       price: doc.data().price,
       name: doc.data().name,
+      id: doc.data().id,
     };
     foodMenu.push(menuObj);
   });
@@ -36,8 +38,13 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
     const drinksObj = {
       price: doc.data().price,
       name: doc.data().name,
+      id: doc.data().id,
     };
     foodDrinks.push(drinksObj);
   });
   return foodDrinks;
 });
+
+export const sendClient = (obj) => {
+  db.collection('clients').doc().set(obj);
+};

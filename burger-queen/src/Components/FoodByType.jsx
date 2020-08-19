@@ -4,11 +4,16 @@ import '../css/app.css';
 import Icons from './Icons';
 
 const ButtonSelectFood = ({ price, name, id }, index) => (
-  <button type="button" key={id} className="buttonSelectFood">
-    <img src={Icons[index].img} alt={name} />
-    <span>{price}</span>
-    <span>{name}</span>
-  </button>
+  <div key={id} className="buttonSelectFood">
+    <button type="button" className="buttonNone buttonByProduct">
+      <img src={Icons[index].img} alt={name} />
+      <span>
+        S/
+        {price}
+      </span>
+      <span className="upperText">{name}</span>
+    </button>
+  </div>
 );
 
 export const BreackfastView = ({ breakfastData }) => {
