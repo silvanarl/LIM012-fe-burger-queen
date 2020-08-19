@@ -43,17 +43,19 @@ const DoOrders = () => {
     client,
     items: [],
     total_price: 0,
+    hour: new Date().toLocaleTimeString(),
+    status: 'pending',
   });
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const addOne = () => setCount(count + 1);
   const lessOne = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };
   const [amount, setAmount] = useState(0);
 
-  const functionx = (price, name, id) => {
+  const addPropertiesToOrder = (price, name, id) => {
     const item = {
       amount,
       price,
@@ -64,16 +66,32 @@ const DoOrders = () => {
       ...prevState,
       items: [item],
     }));
+    console.log(order);
   };
 
   const renderComponentTypeFood = () => {
     switch (selectType) {
       case '1':
-        return <MenuView menuData={menuData} />;
+        return (
+          <MenuView
+            menuData={menuData}
+            addPropertiesToOrder={addPropertiesToOrder}
+          />
+        );
       case '2':
-        return <DrinksView drinksData={drinksData} />;
+        return (
+          <DrinksView
+            drinksData={drinksData}
+            addPropertiesToOrder={addPropertiesToOrder}
+          />
+        );
       default:
-        return <BreackfastView breakfastData={breakfastData} functionx={functionx} />;
+        return (
+          <BreackfastView
+            breakfastData={breakfastData}
+            addPropertiesToOrder={addPropertiesToOrder}
+          />
+        );
     }
   };
 
@@ -132,7 +150,7 @@ const DoOrders = () => {
                     <div className="spaceInter">
                       <span className="fontSize25 upperText">
                         S/
-                        {obj.price}
+                        {obj.price * count}
                       </span>
                     </div>
                     <button type="button" className="buttonNone">
