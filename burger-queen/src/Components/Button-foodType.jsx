@@ -15,23 +15,17 @@ const ButtonFoodType = ({ food, icon }) => (
   </div>
 );
 
-export const ButtonBreakfast = ({ filterSelectType }) => {
-  const handleClick = (event) => {
-    const buttonElement = event.target;
-    buttonElement.classList.toggle('toggleClass');
-  };
-  return (
-    <div className="flexColumn" id="0">
-      <button type="button" className="containerOptionFood" id="0" onClick={() => filterSelectType('0')}>
-        <ButtonFoodType food="Desayuno" icon={Breakfast} />
-      </button>
-    </div>
-  );
-};
+export const ButtonBreakfast = ({ filterSelectType }) => (
+  <div className="flexColumn">
+    <button type="button" className="containerOptionFood" onClick={() => filterSelectType('0')}>
+      <ButtonFoodType food="Desayuno" icon={Breakfast} />
+    </button>
+  </div>
+);
 
 export const ButtonMenu = ({ filterSelectType }) => (
   <div className="flexColumn">
-    <button type="button" className="containerOptionFood" id="1" onClick={() => filterSelectType('1')}>
+    <button type="button" className="containerOptionFood" onClick={() => filterSelectType('1')}>
       <ButtonFoodType food="Menu" icon={Menu} />
     </button>
   </div>
