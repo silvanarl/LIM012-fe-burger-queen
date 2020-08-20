@@ -1,0 +1,67 @@
+/* Waiter Choice */
+.headerMain{
+    background-color: $brown;
+    text-align: center center;
+    text-align: center;
+    width: 100vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .waiter-choice{
+    width: 508px;
+    height: 692px;
+    background-color: $backgroundYellow;
+    border-radius: 35px;
+    margin: 90px;
+    box-sizing: border-box;
+  }
+  .strong-subtitle{
+    font-size: 35px;
+    display: $flex;
+    padding: 100px;
+    padding-bottom: 40px;
+    font-family: $roboto;
+    text-align: center;
+  }
+  .special-subtitle{
+    padding-top: 0%;
+    padding-bottom: 45px;
+  }
+  .placeOrders{
+    padding-left: 174px;
+    padding-bottom: 40px;
+    padding-right: 174px;
+  }
+  .subtitle{
+    font-size: 29px;
+    width: 100vw;
+    padding-left: 125px;
+    padding-right: 125px;
+    font-family: $roboto;
+  }
+  .button-brown{
+    width: 160px;
+    height: 70px;
+    background-color: $brown;
+    font-size: 22px;
+    border-radius: 18px;
+    color: $white;
+    padding: 10px;
+    margin-left: 170px;
+    margin-right: 170px;
+  }
+  .input-name{
+    width: 250px;
+    font-size: 25px;
+    height: 40px;
+    margin: 3px;
+    border-radius: 5px;
+  }
+  .clientValue{
+    font-size: 30px;
+    color: $brown;
+    margin: 10px;
+  }
+  .colorLetterBrown{
+    color: $brown;
+  }

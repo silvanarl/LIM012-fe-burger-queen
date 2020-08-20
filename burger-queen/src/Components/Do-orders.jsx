@@ -4,7 +4,6 @@ import AddIcon from '../assets/orderComponentIcons/add-icon.svg';
 import LessIcon from '../assets/orderComponentIcons/less-icon.svg';
 import DeleteIcon from '../assets/orderComponentIcons/delete-icon.svg';
 import { ButtonMenu, ButtonBreakfast, ButtonDrinks } from './Button-foodType';
-import '../css/app.css';
 import {
   getPriceAndNameBreakfast,
   getPriceAndNameMenu,

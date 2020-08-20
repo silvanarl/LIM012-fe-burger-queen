@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/app.css';
 import Icons from './Icons';
 
 const ButtonSelectFood = ({ price, name, id }, index, addPropertiesToOrder) => (

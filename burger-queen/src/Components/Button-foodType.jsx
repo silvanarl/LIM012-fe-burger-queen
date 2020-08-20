@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/app.css';
 import Menu from '../assets/white-icons/menu-white.svg';
 import Drinks from '../assets/white-icons/drinks-white.svg';
 import Breakfast from '../assets/white-icons/breakfast-white.svg';
