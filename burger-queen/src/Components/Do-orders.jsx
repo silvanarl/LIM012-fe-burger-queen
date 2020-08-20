@@ -9,7 +9,7 @@ import {
   getPriceAndNameBreakfast,
   getPriceAndNameMenu,
   getPriceAndNameDrinks,
-  sendClient,
+  sendOrder,
 } from '../controllers/firestore.controller';
 import {
   BreackfastView,
@@ -26,35 +26,18 @@ const DoOrders = () => {
   const filterSelectType = (str) => {
     setSelectType(str);
   };
-  const initialStateClient = {
+  const initialStateOrder = {
     name: '',
-  };
-  const [client, setClient] = useState(initialStateClient);
-  const updateClient = (e) => {
-    const { name, value } = e.target;
-    setClient({ [name]: value });
-  };
-
-  const sendFirestore = () => {
-    sendClient(client);
-    setClient({ ...initialStateClient });
-  };
-  const [order, setOrder] = useState({
-    client,
     items: [],
     total_price: 0,
     hour: new Date().toLocaleTimeString(),
     status: 'pending',
-  });
-  const [count, setCount] = useState(1);
-  const addOne = () => setCount(count + 1);
-  const lessOne = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
   };
-  const [amount, setAmount] = useState(0);
-
+  const [order, setOrder] = useState(initialStateOrder);
+  const updateClient = (e) => {
+    const { name, value } = e.target;
+    setOrder({ ...order, [name]: value });
+  };
   const addPropertiesToOrder = (price, name, id) => {
     const item = {
       amount,
@@ -66,8 +49,25 @@ const DoOrders = () => {
       ...prevState,
       items: [item],
     }));
-    console.log(order);
   };
+  const sendFirestore = () => {
+    sendOrder(order);
+    setOrder({ ...initialStateOrder });
+  };
+  const [count, setCount] = useState(1);
+  const addOne = () => setCount(count + 1);
+  const lessOne = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+  // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
+  // agregarla al obj order.
+  useEffect(() => {
+    order.items.map(obj => obj.amount = count);
+  }, [count]);
+
+  const [amount, setAmount] = useState(0);
 
   const renderComponentTypeFood = () => {
     switch (selectType) {
@@ -123,12 +123,12 @@ const DoOrders = () => {
               placeholder="Cliente"
               type="text"
               name="name"
-              value={client.name}
+              value={order.name}
               onChange={updateClient}
             />
             <p className="clientValue">
               PARA:
-              <span>{client.name}</span>
+              <span>{order.name}</span>
             </p>
             <div className="containerOrderList">
               <div className="containOrderList">
@@ -159,6 +159,7 @@ const DoOrders = () => {
                   </div>
                 ))
               }
+              {console.log(order)}
               </div>
               <div className="">
                 <span>
