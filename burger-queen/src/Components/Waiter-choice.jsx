@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import viewOrders from '../assets/checklist.svg';
 import placeOrders from '../assets/listEdit.svg';
 import BackgroundBack from './Background-back';
-import '../css/app.css';
 
 const PlaceOrders = () => (
   <div className="">

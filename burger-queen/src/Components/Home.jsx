@@ -4,7 +4,6 @@ import logo from '../assets/title-burger-queen.svg';
 import slogan from '../assets/burger-queen-slogan.svg';
 import waiter from '../assets/waiter.svg';
 import chef from '../assets/chef-hat.svg';
-import '../css/app.css';
 
 const ButtonInit = ({ value }) => (
   <button type="button" className="ButtonInit buttonNone colorLetterBrown">

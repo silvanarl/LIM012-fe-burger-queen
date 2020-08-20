@@ -1,4 +1,8 @@
-$background-color:rgba(241, 221, 168, 0.5);
+@import "variables";
+@import "App";
+@import "waiter-choice";
+@import "folder";
+@import "container-all-food";
 body {
   margin: 0;
   padding: 0;
