@@ -180,6 +180,12 @@
   margin-top: 170px;
 }
 
+.showHour {
+  display: inline-flex;
+  margin-left: 225px;
+  font-size: 40px;
+}
+
 .containerAllFood {
   width: 595px;
   height: 580px;
@@ -316,7 +322,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgba(241, 221, 168, 0.5);
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
