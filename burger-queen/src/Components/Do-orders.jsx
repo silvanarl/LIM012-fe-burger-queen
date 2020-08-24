@@ -43,6 +43,7 @@ const DoOrders = () => {
       price,
       name,
       id,
+      total:0,
     };
     setOrder((prevState) => ({
       ...prevState,
@@ -54,12 +55,27 @@ const DoOrders = () => {
     setOrder({ ...initialStateOrder });
   };
   const [count, setCount] = useState(1);
-  const addOne = () => setCount(count + 1);
+  const addOne = (id) => {
+    setCount(count + 1)
+    totalPriceByProduct(id)
+  };
   const lessOne = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
+  
+  const totalPriceByProduct = (id) => {
+    // let total;
+    const prueba = order.items.filter((obj) => obj.id === id);
+      console.log(prueba);
+      prueba[0].total = prueba[0].price * prueba[0].amount;
+    setOrder((prevState) => ({
+      ...prevState,
+      items:[...order.items],
+    }));
+  };
+
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
   // agregarla al obj order.
   useEffect(() => {
@@ -125,16 +141,18 @@ const DoOrders = () => {
               value={order.name}
               onChange={updateClient}
             />
+            <div className="showHour">{new Date().toLocaleTimeString()}</div>
             <p className="clientValue">
               PARA:
               <span>{order.name}</span>
             </p>
+            
             <div className="containerOrderList">
               <div className="containOrderList">
                 {
                 order.items.map((obj) => (
                   <div className="orderList flexRow" key={obj.id}>
-                    <button type="button" onClick={addOne} className="buttonNone">
+                    <button type="button" onClick={() => addOne(obj.id)} className="buttonNone">
                       <img src={AddIcon} alt="" />
                     </button>
                     <div className="containerQuantityByProducts">
@@ -149,7 +167,7 @@ const DoOrders = () => {
                     <div className="spaceInter">
                       <span className="fontSize25 upperText">
                         S/
-                        {obj.price * count}
+                        {obj.total}
                       </span>
                     </div>
                     <button type="button" className="buttonNone">
