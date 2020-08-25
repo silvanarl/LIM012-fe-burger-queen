@@ -15,6 +15,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
+import Clock from './clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -43,7 +44,7 @@ const DoOrders = () => {
       price,
       name,
       id,
-      total,
+      total:0,
     };
     setOrder((prevState) => ({
       ...prevState,
@@ -55,29 +56,29 @@ const DoOrders = () => {
     setOrder({ ...initialStateOrder });
   };
   const [count, setCount] = useState(1);
-  const addOne = () => setCount(count + 1);
+  const addOne = (id) => {
+    setCount(count + 1)
+    totalPriceByProduct(id)
+  };
   const lessOne = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
-  const totalPriceByProduct = () => {
-    let total;
-    order.items.forEach((obj) => {
-      obj.total = obj.price * count;
-    });
+  
+  const totalPriceByProduct = (id) => {
+    // let total;
+    const prueba = order.items.filter((obj) => obj.id === id);
+      console.log(prueba);
+      prueba[0].total = prueba[0].price * prueba[0].amount;
     setOrder((prevState) => ({
       ...prevState,
-      items,
+      items:[...order.items],
     }));
   };
 
-  const totalPrice = () => {
-
-  };
-
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
-  // agregarla al obj order.
+  // agregarla al obj order. Jijiji
   useEffect(() => {
     order.items.map(obj => obj.amount = count);
   }, [count]);
@@ -143,16 +144,18 @@ const DoOrders = () => {
               value={order.name}
               onChange={updateClient}
             />
+            <div className="showHour">{Clock}</div>
             <p className="clientValue">
               PARA:
               <span>{order.name}</span>
             </p>
+            
             <div className="containerOrderList">
               <div className="containOrderList">
                 {
                 order.items.map((obj) => (
                   <div className="orderList flexRow" key={obj.id}>
-                    <button type="button" onClick={addOne} className="buttonNone">
+                    <button type="button" onClick={() => addOne(obj.id)} className="buttonNone">
                       <img src={AddIcon} alt="" />
                     </button>
                     <div className="containerQuantityByProducts">
@@ -167,7 +170,7 @@ const DoOrders = () => {
                     <div className="spaceInter">
                       <span className="fontSize25 upperText">
                         S/
-                        {obj.price * count}
+                        {obj.total}
                       </span>
                     </div>
                     <button type="button" className="buttonNone">
@@ -176,7 +179,8 @@ const DoOrders = () => {
                   </div>
                 ))
               }
-                {console.log(order)}
+              {console.log(order)}
+              {console.log(order.items)}
               </div>
               <div className="">
                 <span>

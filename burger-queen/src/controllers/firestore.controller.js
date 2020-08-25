@@ -45,6 +45,7 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
   return foodDrinks;
 });
 
+
 export const sendOrder = (obj) => {
   db.collection('orders').doc().set(obj);
 };
