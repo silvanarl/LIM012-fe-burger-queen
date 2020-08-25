@@ -15,7 +15,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
-import Clock from './clock';
+import Clock from './Clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -44,7 +44,7 @@ const DoOrders = () => {
       price,
       name,
       id,
-      total:0,
+      total: 0,
     };
     setOrder((prevState) => ({
       ...prevState,
@@ -55,30 +55,31 @@ const DoOrders = () => {
     sendOrder(order);
     setOrder({ ...initialStateOrder });
   };
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const addOne = (id) => {
-    setCount(count + 1)
-    totalPriceByProduct(id)
+    setCount(count + 1);
+    totalPriceByProduct(id);
   };
   const lessOne = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
-  
+
   const totalPriceByProduct = (id) => {
     // let total;
     const prueba = order.items.filter((obj) => obj.id === id);
-      console.log(prueba);
-      prueba[0].total = prueba[0].price * prueba[0].amount;
+    console.log(prueba);
+    prueba[0].total = prueba[0].price * prueba[0].amount;
     setOrder((prevState) => ({
       ...prevState,
-      items:[...order.items],
+      items: [...order.items],
     }));
+    console.log(order);
   };
 
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
-  // agregarla al obj order. Jijiji
+  // agregarla al obj order.
   useEffect(() => {
     order.items.map(obj => obj.amount = count);
   }, [count]);
@@ -144,12 +145,11 @@ const DoOrders = () => {
               value={order.name}
               onChange={updateClient}
             />
-            <div className="showHour">{Clock}</div>
+            <div className="showHour"><Clock /></div>
             <p className="clientValue">
               PARA:
               <span>{order.name}</span>
             </p>
-            
             <div className="containerOrderList">
               <div className="containOrderList">
                 {
