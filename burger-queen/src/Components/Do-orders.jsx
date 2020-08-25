@@ -15,6 +15,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
+import Clock from './clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -77,7 +78,7 @@ const DoOrders = () => {
   };
 
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
-  // agregarla al obj order.
+  // agregarla al obj order. Jijiji
   useEffect(() => {
     order.items.map(obj => obj.amount = count);
   }, [count]);
@@ -141,7 +142,7 @@ const DoOrders = () => {
               value={order.name}
               onChange={updateClient}
             />
-            <div className="showHour">{new Date().toLocaleTimeString()}</div>
+            <div className="showHour">{Clock}</div>
             <p className="clientValue">
               PARA:
               <span>{order.name}</span>
@@ -177,6 +178,7 @@ const DoOrders = () => {
                 ))
               }
               {console.log(order)}
+              {console.log(order.items)}
               </div>
               <div className="">
                 <span>
