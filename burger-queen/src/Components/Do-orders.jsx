@@ -15,7 +15,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
-import Clock from './Clock';
+import Clock from './clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -40,12 +40,13 @@ const DoOrders = () => {
   };
   const addPropertiesToOrder = (price, name, id, amount, total) => {
     const item = {
-      amount,
+      amount: 1,
       price,
       name,
       id,
-      total: 0,
+      total: 1 * price,
     };
+
     setOrder((prevState) => ({
       ...prevState,
       items: [item],
@@ -55,27 +56,41 @@ const DoOrders = () => {
     sendOrder(order);
     setOrder({ ...initialStateOrder });
   };
-  const [count, setCount] = useState(0);
-  const addOne = (id) => {
-    setCount(count + 1);
-    totalPriceByProduct(id);
-  };
-  const lessOne = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
 
-  const totalPriceByProduct = (id) => {
+  // const totalPriceByProduct = (id) => {
+  //   // let total;
+  //   const prueba = order.items.find((obj) => obj.id === id);
+  //   prueba.total = prueba.price * prueba.amount;
+  //   console.log('prueba', prueba);
+  //   setOrder((prevState) => ({
+  //     ...prevState,
+  //     items: [...order.items],
+  //   }));
+  //   console.log(order);
+  // };
+
+  const totalPriceByProduct = (id, count) => {
     // let total;
-    const prueba = order.items.filter((obj) => obj.id === id);
-    console.log(prueba);
-    prueba[0].total = prueba[0].price * prueba[0].amount;
+    let prueba = order.items.find((obj) => obj.id === id);
+    prueba = Object.assign(prueba, {total:prueba.price * count});
+    console.log('prueba', prueba);
     setOrder((prevState) => ({
       ...prevState,
       items: [...order.items],
     }));
     console.log(order);
+  };
+
+  const [count, setCount] = useState(1);
+  const addOne = (id) => {
+    console.log(count);
+    setCount(count + 1);
+    totalPriceByProduct(id, count + 1);
+  };
+  const lessOne = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
   };
 
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
