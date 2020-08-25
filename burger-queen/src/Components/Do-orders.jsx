@@ -37,12 +37,13 @@ const DoOrders = () => {
     const { name, value } = e.target;
     setOrder({ ...order, [name]: value });
   };
-  const addPropertiesToOrder = (price, name, id) => {
+  const addPropertiesToOrder = (price, name, id, amount, total) => {
     const item = {
       amount,
       price,
       name,
       id,
+      total,
     };
     setOrder((prevState) => ({
       ...prevState,
@@ -60,6 +61,21 @@ const DoOrders = () => {
       setCount(count - 1);
     }
   };
+  const totalPriceByProduct = () => {
+    let total;
+    order.items.forEach((obj) => {
+      obj.total = obj.price * count;
+    });
+    setOrder((prevState) => ({
+      ...prevState,
+      items,
+    }));
+  };
+
+  const totalPrice = () => {
+
+  };
+
   // Usamos este hook para actualizar la cantidad de producto solicitada al valor de count y
   // agregarla al obj order.
   useEffect(() => {
@@ -67,6 +83,8 @@ const DoOrders = () => {
   }, [count]);
 
   const [amount, setAmount] = useState(0);
+  // useEffect(() => {
+  // }, []);
 
   const renderComponentTypeFood = () => {
     switch (selectType) {
@@ -158,12 +176,12 @@ const DoOrders = () => {
                   </div>
                 ))
               }
-              {console.log(order)}
+                {console.log(order)}
               </div>
               <div className="">
                 <span>
                   TOTAL DE PEDIDO: S/
-                  {amount}
+                  {order.total_price}
                 </span>
               </div>
               <div className="">
