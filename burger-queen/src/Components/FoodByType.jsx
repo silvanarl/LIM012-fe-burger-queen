@@ -4,7 +4,10 @@ import Icons from './Icons';
 
 const ButtonSelectFood = ({ price, name, id }, index, addPropertiesToOrder) => (
   <div key={id} className="buttonSelectFood">
-    <button type="button" className="buttonNone buttonByProduct" onClick={() => addPropertiesToOrder(price, name, id)}>
+    <button type="button" className="buttonNone buttonByProduct" onClick={() => addPropertiesToOrder(
+      price, 
+      name, 
+      id)}>
       <img src={Icons[index].img} alt={name} />
       <span>
         S/
