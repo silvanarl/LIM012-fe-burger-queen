@@ -5,6 +5,12 @@ import App from './App';
 import Home from './Components/Home';
 import Waiter from './Components/Waiter-choice';
 
+describe('App', () => {
+  test('renders App component', () => {
+    render(<App />);
+  });
+});
+
 test('renders PEDIDOS at button', () => {
   const { getByText } = render(<Home />);
   const buttonElement = getByText(/PEDIDOS/i);
