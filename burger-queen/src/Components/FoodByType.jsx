@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icons from './Icons';
 
 const ButtonSelectFood = ({ price, name, id }, index, addPropertiesToOrder) => (
   <div key={id} className="buttonSelectFood">
-    <button type="button" className="buttonNone buttonByProduct" onClick={() => addPropertiesToOrder(
-      price, 
-      name, 
-      id)}>
-      <img src={Icons[index].img} alt={name} />
+    <button
+      type="button"
+      className="buttonNone buttonByProduct"
+      onClick={() => addPropertiesToOrder(
+        price,
+        name,
+        id,
+      )}
+    >
+      <figure><img src={`${process.env.PUBLIC_URL}/iconsProducts/${name}.svg`} alt={name} /></figure>
       <span>
         S/
         {price}
