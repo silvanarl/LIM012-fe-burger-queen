@@ -46,10 +46,11 @@ const DoOrders = () => {
       id,
       total: 1 * price,
     };
+    const arrItems = order.items.push(item);
 
     setOrder((prevState) => ({
       ...prevState,
-      items: [item],
+      arrItems,
     }));
   };
 
