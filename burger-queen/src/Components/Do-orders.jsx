@@ -16,7 +16,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
-import Clock from './Clock';
+import Clock from './clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -72,6 +72,14 @@ const DoOrders = () => {
     setOrder({ ...order, items: itemSelected.amount });
     totalPriceByProduct(id, itemSelected.amount);
   };
+  // const [count, setCount] = useState(1);
+  // const addOne = (id) => {
+  //   let newAmount = 1;
+  //   const compare = order.items.find((obj) => obj.id === id);
+  //   console.log(compare);
+  //   setOrder((prevState) => ({...prevState, item: [...order.items]}));
+  //   totalPriceByProduct(id, count + 1);
+  // };
   const lessOne = (id) => {
     const itemSelected = order.items.find((e) => e.id === id);
     if (itemSelected.amount > 1) {
@@ -163,6 +171,7 @@ const DoOrders = () => {
               <span>{order.name}</span>
             </p>
             <div className="containerOrderList">
+              <div className="justlist">
               <div className="containOrderList">
                 {
                 order.items.map((obj) => (
@@ -195,8 +204,11 @@ const DoOrders = () => {
                   </div>
                 ))
               }
+              </div>
+              </div>
                 {console.log(order)}
               </div>
+            <div className="blockEnd">
               <div className="clientValue">
                 <span>
                   TOTAL DE PEDIDO: S/
@@ -217,12 +229,12 @@ const DoOrders = () => {
                 >
                   ANULAR
                 </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

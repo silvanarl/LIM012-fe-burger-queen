@@ -18,4 +18,17 @@
     display: inline-flex;
     margin-left: 225px;
     font-size: 40px;
+    position: fixed;
+  }
+  .blockEnd{
+    display: block;
+    position: absolute;
+    top: 635px;
+    left: 26px;
+  }
+  .justlist{
+    display: block;
+    position: absolute;
+    top: 134px;
+    left: 13px;
   }
