@@ -29,7 +29,7 @@ const DoOrders = () => {
   const initialStateOrder = {
     name: '',
     items: [],
-    totalPrice: [],
+    totalPrice: [0],
     hour: new Date().toLocaleTimeString(),
     status: 'pending',
   };
@@ -47,24 +47,15 @@ const DoOrders = () => {
       total: 1 * price,
     };
     const arrItems = order.items.push(item);
+    const findID = order.items.find((e) => e.id === id);
+    // aqui poner una condicional para que no agregue el mismo item si ya lo encontró en el array
+    console.log(findID);
 
     setOrder((prevState) => ({
       ...prevState,
       arrItems,
     }));
   };
-
-  // const totalPriceByProduct = (id) => {
-  //   // let total;
-  //   const prueba = order.items.find((obj) => obj.id === id);
-  //   prueba.total = prueba.price * prueba.amount;
-  //   console.log('prueba', prueba);
-  //   setOrder((prevState) => ({
-  //     ...prevState,
-  //     items: [...order.items],
-  //   }));
-  //   console.log(order);
-  // };
 
   const totalPriceByProduct = (id, count) => {
     let prueba = order.items.find((obj) => obj.id === id);
@@ -75,31 +66,24 @@ const DoOrders = () => {
     }));
   };
 
-  // const totalPrice = () => {
-  //   order.items.forEach((e) => {
-  //     order.totalPrice.push(e.total);
-  //   });
-  //   order.totalPrice.reduce((acc, curr) => acc + curr);
-  //   console.log(order.totalPrice);
-  // };
-  // console.log(totalPrice());
-
-  const [count, setCount] = useState(1);
   const addOne = (id) => {
-    setCount(count + 1);
-    totalPriceByProduct(id, count + 1);
+    const itemSelected = order.items.find((e) => e.id === id);
+    itemSelected.amount += 1;
+    setOrder({ ...order, items: itemSelected.amount });
+    totalPriceByProduct(id, itemSelected.amount);
   };
   const lessOne = (id) => {
-    if (count > 1) {
-      setCount(count - 1);
-      totalPriceByProduct(id, count - 1);
+    const itemSelected = order.items.find((e) => e.id === id);
+    if (itemSelected.amount > 1) {
+      itemSelected.amount -= 1;
     }
+    setOrder({ ...order, items: itemSelected.amount });
+    totalPriceByProduct(id, itemSelected.amount);
   };
 
   const deleteItem = (id) => {
-    console.log(id);
-    const itemsDontDelete = order.items.filter((e) => e.id !== id);
-    setOrder((prevState) => ({ ...prevState, item: itemsDontDelete }));
+    order.items.splice(id, 1);
+    setOrder((prevState) => ({ ...prevState, order }));
   };
 
   const sendFirestore = () => {
@@ -187,9 +171,13 @@ const DoOrders = () => {
                       <img src={AddIcon} alt="" />
                     </button>
                     <div className="containerQuantityByProducts">
-                      <span>{count}</span>
+                      <span>{obj.amount}</span>
                     </div>
-                    <button type="button" onClick={() => lessOne(obj.id)} className="buttonNone">
+                    <button
+                      type="button"
+                      onClick={() => lessOne(obj.id)}
+                      className="buttonNone"
+                    >
                       <img src={LessIcon} alt="" />
                     </button>
                     <div className="spaceInter">
@@ -207,11 +195,12 @@ const DoOrders = () => {
                   </div>
                 ))
               }
+                {console.log(order)}
               </div>
-              <div className="">
+              <div className="clientValue">
                 <span>
                   TOTAL DE PEDIDO: S/
-                  {order.total_price}
+                  {order.items.reduce((acum, obj) => acum + obj.price * obj.amount, 0)}
                 </span>
               </div>
               <div className="">
