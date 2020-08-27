@@ -86,9 +86,17 @@ const DoOrders = () => {
 
   const [count, setCount] = useState(1);
   const addOne = (id) => {
-    setCount(count + 1);
+    setOrder(count + 1);
     totalPriceByProduct(id, count + 1);
   };
+  // const [count, setCount] = useState(1);
+  // const addOne = (id) => {
+  //   let newAmount = 1;
+  //   const compare = order.items.find((obj) => obj.id === id);
+  //   console.log(compare);
+  //   setOrder((prevState) => ({...prevState, item: [...order.items]}));
+  //   totalPriceByProduct(id, count + 1);
+  // };
   const lessOne = (id) => {
     if (count > 1) {
       setCount(count - 1);
@@ -188,6 +196,8 @@ const DoOrders = () => {
                     </button>
                     <div className="containerQuantityByProducts">
                       <span>{count}</span>
+                      {console.log(count)}
+                      {console.log(obj.amount)}
                     </div>
                     <button type="button" onClick={() => lessOne(obj.id)} className="buttonNone">
                       <img src={LessIcon} alt="" />
@@ -207,6 +217,7 @@ const DoOrders = () => {
                   </div>
                 ))
               }
+              {console.log(order)}
               </div>
               <div className="">
                 <span>
