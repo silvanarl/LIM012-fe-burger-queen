@@ -7,9 +7,7 @@ const Kitchen = () => {
   const [enteredOrder, setEnteredOrder] = useState([]);
 
   useEffect(() => {
-    getOrders().then((arr) => {
-      setEnteredOrder(arr);
-    });
+    getOrders().then((arr) => setEnteredOrder(arr));
   });
 
   return (
