@@ -8,7 +8,7 @@ const Kitchen = () => {
 
   useEffect(() => {
     getOrders().then((arr) => setEnteredOrder(arr));
-  });
+  }, []);
 
   return (
     <div>
@@ -16,8 +16,7 @@ const Kitchen = () => {
       <div className="title-orders-kitchen">
         <p>PEDIDOS INGRESADOS</p>
       </div>
-      <EnteredOrder enteredOrder={enteredOrder} />
-
+      <EnteredOrder enteredOrder={enteredOrder} setEnteredOrder={setEnteredOrder} />
     </div>
   );
 };

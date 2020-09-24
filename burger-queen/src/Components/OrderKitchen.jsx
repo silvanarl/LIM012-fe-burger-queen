@@ -1,23 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { updateStatus } from '../controllers/firestore.controller';
 
 const EnteredOrder = ({ enteredOrder }) => {
-  // {console.log(enteredOrder)}
+  console.log(enteredOrder);
+  const handleClick = (id) => {
+    const idList = enteredOrder.find((obj) => obj.id === id);
+    const newStatus = 'list';
+    updateStatus(id, newStatus);
+  };
+  EnteredOrder.propTypes = {
+    enteredOrder: PropTypes.arrayOf.isRequired,
+  };
+
   return (
     <div>
-      <div className="" />
       {enteredOrder.map((obj) => (
-        <div className="entered-order-container">
-          <div key={obj.id} className="entered-order-info">
+        <div key={obj.id} className="entered-order-container">
+          <div className="entered-order-info">
             <p>{obj.name}</p>
             <p>{obj.hour}</p>
-            {obj.items.map((objItem) => (
-              <ul>
+            {obj.items.map((objItem, index) => (
+              <ul key={index}>
                 <li>
                   <span>{objItem.amount}</span>
                   <span>{objItem.name}</span>
                 </li>
               </ul>
             ))}
+            <button type="button" onClick={() => handleClick(obj.id)}>listo!</button>
           </div>
         </div>
       ))}

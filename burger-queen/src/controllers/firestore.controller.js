@@ -56,6 +56,7 @@ export const getOrders = () => db.collection('orders').get().then((snapshot) => 
       hour: doc.data().hour,
       items: doc.data().items,
       name: doc.data().name,
+      status: doc.data().status,
       id: doc.id,
     };
     arrOrders.push(objOrder);
@@ -63,3 +64,9 @@ export const getOrders = () => db.collection('orders').get().then((snapshot) => 
   return arrOrders;
 })
   .catch((err) => console.log(err));
+
+export const updateStatus = (id, newStatus) => {
+  db.collection('orders').doc(id).update({
+    status: newStatus,
+  });
+};
