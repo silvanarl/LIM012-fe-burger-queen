@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { updateStatus } from '../controllers/firestore.controller';
 
 const EnteredOrder = ({ enteredOrder }) => {
-  console.log(enteredOrder);
   const handleClick = (id) => {
-    const idList = enteredOrder.find((obj) => obj.id === id);
+    enteredOrder.find((obj) => obj.id === id);
     const newStatus = 'list';
     updateStatus(id, newStatus);
   };
