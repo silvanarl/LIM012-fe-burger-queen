@@ -1,5 +1,8 @@
 
-
+.title-container{
+    display: flex;
+    justify-content: space-around;
+}
 .title-orders-kitchen{
     background-color: $backgroundYellow;
     width: 463px;
@@ -10,8 +13,9 @@
     font-size: 30px;
     justify-content: center;
     text-align: center;
-    p{
-        padding-top: 30px;
-    }
+}
+.container-kitchen{
+    display: flex;
+    justify-content: space-around;
 }
 

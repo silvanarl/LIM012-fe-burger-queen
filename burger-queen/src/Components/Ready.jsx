@@ -1,21 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import send from '../assets/change-status-order.svg';
+// import PropTypes from 'prop-types';
+// import send from '../assets/change-status-order.svg';
 import { updateStatus } from '../controllers/firestore.controller';
 
-const EnteredOrder = ({ enteredOrder }) => {
-  const handleClick = (id) => {
-    enteredOrder.find((obj) => obj.id === id);
-    const newStatus = 'list';
-    updateStatus(id, newStatus);
-  };
-  EnteredOrder.propTypes = {
-    enteredOrder: PropTypes.arrayOf.isRequired,
-  };
+const ReadyOrder = ({ readyOrder }) => {
+  {console.log(readyOrder)}
+//   const handleClick = (id) => {
+//     enteredOrder.find((obj) => obj.id === id);
+//     const newStatus = 'delivered';
+//     updateStatus(id, newStatus);
+//   };
+//   EnteredOrder.propTypes = {
+//     enteredOrder: PropTypes.arrayOf.isRequired,
+//   };
 
   return (
     <div>
-      {enteredOrder.map((obj) => (
+      {readyOrder.map((obj) => (
         <div className="entered-order-wrapper">
           <div key={obj.id} className="entered-order-container">
             <div className="entered-order-info">
@@ -31,9 +32,9 @@ const EnteredOrder = ({ enteredOrder }) => {
                   </li>
                 </ul>
               ))}
-              <button type="button" onClick={() => handleClick(obj.id)}>
+              {/* <button type="button" onClick={() => handleClick(obj.id)}>
                 <img src={send} alt="Envía orden a Listo" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -42,4 +43,4 @@ const EnteredOrder = ({ enteredOrder }) => {
   );
 };
 
-export default EnteredOrder;
+export default ReadyOrder;

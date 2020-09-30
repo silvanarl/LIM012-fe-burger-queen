@@ -1,4 +1,5 @@
 import 'firebase/firestore';
+import DoOrders from '../Components/Do-orders';
 import Firebase from '../firebase-config';
 
 const db = Firebase.firestore();
@@ -48,6 +49,22 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
 export const sendOrder = (obj) => {
   db.collection('orders').doc().set(obj);
 };
+
+export const getOrdersReady = () => db.collection('orders').where('status', '==', 'list').get().then((snapshot) => {
+  const ordersReady = [];
+  snapshot.forEach((doc) => {
+    const objReady = {
+      hour: doc.data().hour,
+      items: doc.data().items,
+      name: doc.data().name,
+      status: doc.data().status,
+      id: doc.id,
+    };
+    ordersReady.push(objReady);
+  });
+  return ordersReady;
+})
+  .catch((err) => console.log(err));
 
 export const getOrders = () => db.collection('orders').get().then((snapshot) => {
   const arrOrders = [];

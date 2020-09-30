@@ -104,10 +104,10 @@ pendientes de tu proyecto anterior.
 
 ### HTML y CSS
 
-- [ ] HTML semántico
-- [ ] CSS flexbox
+- [x] HTML semántico
+- [x] CSS flexbox
 - [ ] Sass
-- [ ] Maquetación
+- [x] Maquetación
 
 ### Frontend Development
 
@@ -116,8 +116,8 @@ pendientes de tu proyecto anterior.
 
 ### PWA
 
-- [ ] Concepto
-- [ ] Utilidad
+- [x] Concepto
+- [x] Utilidad
 - [ ] Que es [Workbox](https://developers.google.com/web/tools/workbox)
 - [ ] Qué es un `serviceWorker`
 
@@ -134,14 +134,14 @@ pendientes de tu proyecto anterior.
 
 ### React
 
-- [ ] [`JSX`](https://es.reactjs.org/docs/introducing-jsx.html)
-- [ ] [Componentes `class` y componentes `function`](https://es.reactjs.org/docs/components-and-props.html#function-and-class-components)
-- [ ] `props`
-- [ ] [Manejo de eventos](https://es.reactjs.org/docs/handling-events.html)
-- [ ] [Listas y keys](https://es.reactjs.org/docs/lists-and-keys.html)
+- [x] [`JSX`](https://es.reactjs.org/docs/introducing-jsx.html)
+- [x] [Componentes `class` y componentes `function`](https://es.reactjs.org/docs/components-and-props.html#function-and-class-components)
+- [x] `props`
+- [x] [Manejo de eventos](https://es.reactjs.org/docs/handling-events.html)
+- [x] [Listas y keys](https://es.reactjs.org/docs/lists-and-keys.html)
 - [ ] [Renderizado condicional](https://es.reactjs.org/docs/conditional-rendering.html)
 - [ ] [Levantamiento de estados](https://es.reactjs.org/docs/lifting-state-up.html)
-- [ ] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
+- [x] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
 - [ ] [`CSS` modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
 - [ ] [React Router](https://reacttraining.com/react-router/web)
 
@@ -162,7 +162,7 @@ pendientes de tu proyecto anterior.
 
 ### Firebase
 
-- [ ] Firestore
+- [x] Firestore
 - [ ] Firebase security rules
 - [ ] Observables
 
@@ -175,22 +175,22 @@ pendientes de tu proyecto anterior.
 
 ### Colaboración en Github
 
-- [ ] Branches
-- [ ] Pull Requests
+- [x] Branches
+- [x] Pull Requests
 - [ ] Tags
 
 ### Organización en Github
 
-- [ ] Projects
-- [ ] Issues
-- [ ] Labels
-- [ ] Milestones
+- [x] Projects
+- [x] Issues
+- [x] Labels
+- [x] Milestones
 
 ### Buenas prácticas de desarrollo
 
-- [ ] Modularización
-- [ ] Nomenclatura / Semántica
-- [ ] Linting
+- [x] Modularización
+- [x] Nomenclatura / Semántica
+- [x] Linting
 
 ---
 

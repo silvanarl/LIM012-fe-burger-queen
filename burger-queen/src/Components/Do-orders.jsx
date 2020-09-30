@@ -48,7 +48,6 @@ const DoOrders = () => {
     const findID = order.items.find((element) => element.id === id);
     let arrItems = [];
     if (findID === null) {
-      console.log(findID);
       findID.amount += 1;
     } else {
       arrItems = order.items.push(item);
@@ -172,13 +171,14 @@ const DoOrders = () => {
                   {
                   order.items.map((obj) => (
                     <div className="orderList flexRow" key={obj.id}>
-                      <button type="button" onClick={() => addOne(obj.id)} className="buttonNone">
+                      <button id="counter-add" type="button" onClick={() => addOne(obj.id)} className="buttonNone">
                         <img src={AddIcon} alt="" />
                       </button>
                       <div className="containerQuantityByProducts">
-                        <span>{obj.amount}</span>
+                        <span id="counter-span">{obj.amount}</span>
                       </div>
                       <button
+                        id="counter-less"
                         type="button"
                         onClick={() => lessOne(obj.id)}
                         className="buttonNone"
@@ -202,7 +202,6 @@ const DoOrders = () => {
                 }
                 </div>
               </div>
-              {console.log(order)}
             </div>
             <div className="blockEnd">
               <div className="clientValue">

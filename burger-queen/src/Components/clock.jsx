@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 const Clock = () => {
-  const [clock, setClock] = useState(new Date().toLocaleTimeString());
+  const [clock, setClock] = useState(new Date().toLocaleString());
   useEffect(() => {
-    setInterval(() => {
-      setClock(new Date().toLocaleTimeString());
+    const interval = setInterval(() => {
+      setClock(new Date().toLocaleString());
     }, 1000);
+    return () => clearInterval(interval);
   });
   return (
     <div>
