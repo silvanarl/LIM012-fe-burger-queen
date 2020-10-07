@@ -349,7 +349,7 @@
   font-size: 1em;
 }
 
-.title-container {
+.flex-around {
   display: flex;
   justify-content: space-around;
 }
@@ -364,11 +364,6 @@
   font-size: 30px;
   justify-content: center;
   text-align: center;
-}
-
-.container-kitchen {
-  display: flex;
-  justify-content: space-around;
 }
 
 .entered-order-wrapper {

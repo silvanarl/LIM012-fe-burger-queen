@@ -106,7 +106,7 @@ pendientes de tu proyecto anterior.
 
 - [x] HTML semántico
 - [x] CSS flexbox
-- [ ] Sass
+- [x] Sass
 - [x] Maquetación
 
 ### Frontend Development
@@ -118,8 +118,8 @@ pendientes de tu proyecto anterior.
 
 - [x] Concepto
 - [x] Utilidad
-- [ ] Que es [Workbox](https://developers.google.com/web/tools/workbox)
-- [ ] Qué es un `serviceWorker`
+- [x] Que es [Workbox](https://developers.google.com/web/tools/workbox)
+- [x] Qué es un `serviceWorker`
 
 ### Angular
 
@@ -164,7 +164,7 @@ pendientes de tu proyecto anterior.
 
 - [x] Firestore
 - [ ] Firebase security rules
-- [ ] Observables
+- [x] Observables
 
 ### Testing
 

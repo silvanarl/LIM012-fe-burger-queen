@@ -1,5 +1,9 @@
+@mixin width-height ($width, $height) {
+    width: $width;
+    height: $height;
+}
 
-.title-container{
+.flex-around{
     display: flex;
     justify-content: space-around;
 }
@@ -7,6 +11,7 @@
     background-color: $backgroundYellow;
     width: 463px;
     height: 92px;
+    //@include width-heigh(463px, 92px);
     border-radius: 25px;
     color: $brown;
     margin-top: 50px;
@@ -14,8 +19,5 @@
     justify-content: center;
     text-align: center;
 }
-.container-kitchen{
-    display: flex;
-    justify-content: space-around;
-}
+
 

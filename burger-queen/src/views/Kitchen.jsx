@@ -16,7 +16,7 @@ const Kitchen = () => {
   return (
     <div>
       <Background />
-      <div className="title-container">
+      <div className="flex-around">
         <div className="title-orders-kitchen">
           <p>PEDIDOS INGRESADOS</p>
         </div>
@@ -24,7 +24,7 @@ const Kitchen = () => {
           <p>PEDIDOS LISTOS</p>
         </div>
       </div>
-      <div className="container-kitchen">
+      <div className="flex-around">
         <EnteredOrder enteredOrder={enteredOrder} />
         <ReadyOrder readyOrder={readyOrder} />
       </div>

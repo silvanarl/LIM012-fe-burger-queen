@@ -5,7 +5,7 @@ import App from '../src/App';
 import Home from '../src/Components/Home';
 import Waiter from '../src/Components/Waiter-choice';
 import Orders from '../src/Components/Do-orders';
-// 🐐
+import Kitchen from '../src/views/Kitchen';
 
 describe('App component', () => {
   it('renders without error', () => {
@@ -38,19 +38,23 @@ test('Orders renderiza', () => {
   shallow(<Orders />);
 });
 
+test('Kitchen renderiza', () => {
+  shallow(<Kitchen />);
+});
+
 test('Bienvenida no existe', () => {
   const wrapper = shallow(<App />);
   const welcome = <h2>Welcome to my ReactApp!</h2>;
   expect(wrapper.contains(welcome)).toEqual(false);
 });
 
-it('add count', () => {
-  const wrapper = shallow(<Orders />);
-  expect(wrapper.find('#counter-span').text().includes('1')).toBe(true);
-  wrapper.find('#counter-add').simulate('click');
+// it('add count', () => {
+//   const wrapper = shallow(<Orders />);
+//   expect(wrapper.find('#counter-span').text().includes('1')).toBe(true);
+//   wrapper.find('#counter-add').simulate('click');
 
-  expect(wrapper.find('#counter-span').text().includes('2')).toBe(true);
-  wrapper.find('#counter-add').simulate('click');
+//   expect(wrapper.find('#counter-span').text().includes('2')).toBe(true);
+//   wrapper.find('#counter-add').simulate('click');
 
-  expect(wrapper.find('#counter-span').text().includes('3')).toBe(true);
-});
+//   expect(wrapper.find('#counter-span').text().includes('3')).toBe(true);
+// });
