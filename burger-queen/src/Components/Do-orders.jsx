@@ -157,19 +157,22 @@ const DoOrders = () => {
           <div className="folder" />
           <div className="folderTwo" />
           <div className="orderInfo">
-            <input
-              className="input-name"
-              placeholder="Cliente"
-              type="text"
-              name="name"
-              value={order.name}
-              onChange={updateClient}
-            />
+            <div className="inputName">
+              <input
+                className="input-name"
+                placeholder="Cliente"
+                type="text"
+                id="name"
+                name="name"
+                value={order.name}
+                onChange={updateClient}
+              />
+              <label htmlFor="name" className="clientValue">
+                PARA:
+                <span>{order.name}</span>
+              </label>
+            </div>
             <div className="showHour"><Clock /></div>
-            <p className="clientValue">
-              PARA:
-              <span>{order.name}</span>
-            </p>
             <div className="containerOrderList">
               <div className="justlist">
                 <div className="containOrderList">

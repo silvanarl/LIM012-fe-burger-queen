@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from '../src/App';
 import Home from '../src/Components/Home';
 import Waiter from '../src/Components/Waiter-choice';

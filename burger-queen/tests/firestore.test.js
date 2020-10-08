@@ -16,10 +16,10 @@ const fixtureData = {
 };
 
 // causa onSnapshot
-global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true }); 
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 describe('enviar ordenes', () => {
-  it('debería poder enviar una orden con estos datos', (done) => sendOrder(fictureData)
+  it('debería poder enviar una orden con estos datos', (done) => sendOrder(fixtureData)
     .then(() => {
       const callback = (order) => {
         const name = order.find((ele) => ele.name === 'Simone');

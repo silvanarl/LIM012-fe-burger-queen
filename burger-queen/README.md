@@ -143,7 +143,7 @@ pendientes de tu proyecto anterior.
 - [ ] [Levantamiento de estados](https://es.reactjs.org/docs/lifting-state-up.html)
 - [x] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
 - [ ] [`CSS` modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
-- [ ] [React Router](https://reacttraining.com/react-router/web)
+- [x] [React Router](https://reacttraining.com/react-router/web)
 
 ### Vue
 
@@ -169,7 +169,7 @@ pendientes de tu proyecto anterior.
 ### Testing
 
 - [ ] Testeo de tus interfaces
-- [ ] Testeo de componentes
+- [x] Testeo de componentes
 - [ ] Testeo asíncrono
 - [ ] Mocking
 
