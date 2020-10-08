@@ -46,6 +46,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "firebase-mock": "^2.3.2"
+    "firebase-mock": "^2.3.2",
+    "mock-cloud-firestore": "^0.12.0"
   }
 }

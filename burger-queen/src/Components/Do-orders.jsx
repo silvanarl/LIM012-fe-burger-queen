@@ -212,13 +212,13 @@ const DoOrders = () => {
               </div>
               <div className="flex-around">
                 {/* <a href="/orders"> */}
-                  <button
-                    className="buttonNone sendAndNullButton"
-                    type="button"
-                    onClick={sendFirestore}
-                  >
-                    ENVIAR
-                  </button>
+                <button
+                  className="buttonNone sendAndNullButton"
+                  type="button"
+                  onClick={sendFirestore}
+                >
+                  ENVIAR
+                </button>
                 {/* </a> */}
                 <button
                   className="buttonNone sendAndNullButton"

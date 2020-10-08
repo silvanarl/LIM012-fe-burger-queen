@@ -7,24 +7,24 @@
 //   () => mockfirestore,
 // );
 
-const firestore = () => {
-  return {
-    collection: (nameCollection) => {
-      return {
-        set: (obj) => {
-          return new Promise((resolve) => {
-            resolve('se agregó la orden');
-          });
-        }
-      }
-    }
-  }
-};
+// const firestore = () => {
+//   return {
+//     collection: (nameCollection) => {
+//       return {
+//         set: (obj) => {
+//           return new Promise((resolve) => {
+//             resolve('se agregó la orden');
+//           });
+//         }
+//       }
+//     }
+//   }
+// };
 
-const firebase = {
-  firestore: firestore,
-};
+// const firebase = {
+//   firestore: firestore,
+// };
 
-export default jest.fn(() => {
-  return firebase;
-});
+// export default jest.fn(() => {
+//   return firebase;
+// });

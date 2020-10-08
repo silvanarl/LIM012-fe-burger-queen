@@ -1,24 +1,37 @@
-import MockFirebase from '../_mocks_/fnMock';
-import { sendOrder } from '../src/controllers/firestore.controller';
+import MockFirebase from 'mock-cloud-firestore';
+import { sendOrder, getOrders } from '../src/controllers/firestore.controller';
 
-global.firebase = MockFirebase;
+const fixtureData = {
+  name: 'Simone',
+  items: [
+    {
+      name: 'jugo natural',
+      price: 7,
+      id: '12345678',
+      amount: 1,
+      total: 7,
+    },
+  ],
+  status: 'pending',
+};
+
+// causa onSnapshot
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true }); 
 
 describe('enviar ordenes', () => {
-  it('debería poder enviar una orden con estos datos', () => {
-    return sendOrder({
-      name: 'Simone',
-      items: [
-        {
-          name: 'jugo natural',
-          price: 7,
-          id: '12345678',
-          amount: 1,
-          total: 7,
-        },
-      ],
-      status: 'pending',
-    }).then((data) => {
-      expect(data).toBe('se agregó la orden');
-    });
+  it('debería poder enviar una orden con estos datos', (done) => sendOrder(fictureData)
+    .then(() => {
+      const callback = (order) => {
+        const name = order.find((ele) => ele.name === 'Simone');
+        expect(name).toBe('Simone'); // name = name.name
+        done();
+      };
+      getOrders(callback);
+    }));
+});
+
+describe('Obtener ordenes', () => {
+  it('deberia traer las ordenes pendientes', () => {
+
   });
 });
