@@ -1,15 +1,15 @@
 /* Waiter Choice */
+@import 'mixin';
+
 .headerMain{
     background-color: $brown;
-    text-align: center center;
     text-align: center;
     width: 100vw;
     padding-top: 15px;
     padding-bottom: 15px;
   }
   .waiter-choice{
-    width: 508px;
-    height: 692px;
+    @include measures(508px, 692px);
     background-color: $backgroundYellow;
     border-radius: 35px;
     margin: 90px;
@@ -40,8 +40,7 @@
     font-family: $roboto;
   }
   .button-brown{
-    width: 160px;
-    height: 70px;
+    @include measures(160px, 70px);
     background-color: $brown;
     font-size: 22px;
     border-radius: 18px;
@@ -51,9 +50,8 @@
     margin-right: 170px;
   }
   .input-name{
-    width: 250px;
     font-size: 25px;
-    height: 40px;
+    @include measures(250px, 40px);
     margin: 3px;
     border-radius: 5px;
   }

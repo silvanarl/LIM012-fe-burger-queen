@@ -177,7 +177,7 @@ pendientes de tu proyecto anterior.
 
 - [x] Branches
 - [x] Pull Requests
-- [ ] Tags
+- [x] Tags
 
 ### Organización en Github
 

@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import PlaceAndViewOrders from './Components/Waiter-choice';
 import DoOrders from './Components/Do-orders';
 import Kitchen from './views/Kitchen';
+import Deliver from './views/Deliver';
 
 const App = () => (
   <Router>
@@ -23,6 +24,9 @@ const App = () => (
         </Route>
         <Route path="/kitchen">
           <Kitchen />
+        </Route>
+        <Route path="/deliver">
+          <Deliver />
         </Route>
       </Switch>
     </div>

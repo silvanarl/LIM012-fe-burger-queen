@@ -1,4 +1,4 @@
-import MockFirebase from '../__mocks__/fnMock';
+import MockFirebase from '../_mocks_/fnMock';
 import { sendOrder } from '../src/controllers/firestore.controller';
 
 global.firebase = MockFirebase;
@@ -18,19 +18,7 @@ describe('enviar ordenes', () => {
       ],
       status: 'pending',
     }).then((data) => {
-      expect(data).toBe({
-        name: 'Simone',
-        items: [
-          {
-            name: 'jugo natural',
-            price: 7,
-            id: '12345678',
-            amount: 1,
-            total: 7,
-          },
-        ],
-        status: 'pending',
-      });
+      expect(data).toBe('se agregó la orden');
     });
   });
 });

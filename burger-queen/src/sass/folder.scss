@@ -1,16 +1,15 @@
 // Folder
+@import 'mixin';
 
 .folder{
     background-color: $backgroundYellow;
-    width: 366px;
-    height: 780px;
+    @include measures(366px, 780px);
     border-radius: 30px 30px 0px 30px;
     margin-top: 50px;
   }
   .folderTwo{
     background-color: $backgroundYellow;
-    width: 316px;
-    height: 660px;
+    @include measures(316px, 660px);
     border-radius: 0 30px 30px 0px;
     margin-top: 170px;
   }
@@ -19,6 +18,7 @@
     margin-left: 225px;
     font-size: 40px;
     position: fixed;
+    top: 160px;
   }
   .blockEnd{
     display: block;

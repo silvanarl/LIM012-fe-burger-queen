@@ -16,7 +16,7 @@ const PlaceOrders = () => (
 
 const ViewOrders = () => (
   <div>
-    <a href="/">
+    <a href="/deliver">
       <button type="button" className="waiter-choice buttonNone">
         <span className="strong-subtitle special-subtitle colorLetterBrown">VER PEDIDOS LISTOS</span>
         <img src={viewOrders} alt="" />

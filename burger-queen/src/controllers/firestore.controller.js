@@ -55,37 +55,56 @@ export const sendOrder = (obj) => {
     });
 };
 
-export const getOrdersReady = () => db.collection('orders').where('status', '==', 'list').get().then((snapshot) => {
-  const ordersReady = [];
-  snapshot.forEach((doc) => {
-    const objReady = {
-      hour: doc.data().hour,
-      items: doc.data().items,
-      name: doc.data().name,
-      status: doc.data().status,
-      id: doc.id,
-    };
-    ordersReady.push(objReady);
+export const getOrdersReady = (callback) => db.collection('orders')
+  .where('status', '==', 'ready')
+  .onSnapshot((querySnapshot) => {
+    const ordersReady = [];
+    querySnapshot.forEach((doc) => {
+      const objReady = {
+        hour: doc.data().hour,
+        items: doc.data().items,
+        name: doc.data().name,
+        status: doc.data().status,
+        id: doc.id,
+      };
+      ordersReady.push(objReady);
+    });
+    callback(ordersReady);
   });
-  return ordersReady;
-})
-  .catch((err) => console.log(err));
 
-export const getOrders = () => db.collection('orders').get().then((snapshot) => {
-  const arrOrders = [];
-  snapshot.forEach((doc) => {
-    const objOrder = {
-      hour: doc.data().hour,
-      items: doc.data().items,
-      name: doc.data().name,
-      status: doc.data().status,
-      id: doc.id,
-    };
-    arrOrders.push(objOrder);
+export const getOrdersDelivered = (callback) => db.collection('orders')
+  .where('status', '==', 'delivered')
+  .onSnapshot((querySnapshot) => {
+    const ordersDelivered = [];
+    querySnapshot.forEach((doc) => {
+      const objDelivered = {
+        hour: doc.data().hour,
+        items: doc.data().items,
+        name: doc.data().name,
+        status: doc.data().status,
+        id: doc.id,
+      };
+      ordersDelivered.push(objDelivered);
+    });
+    callback(ordersDelivered);
   });
-  return arrOrders;
-})
-  .catch((err) => console.log(err));
+
+export const getOrders = (callback) => db.collection('orders')
+  .where('status', '==', 'pending')
+  .onSnapshot((snapshot) => {
+    const arrOrders = [];
+    snapshot.forEach((doc) => {
+      const objOrder = {
+        hour: doc.data().hour,
+        items: doc.data().items,
+        name: doc.data().name,
+        status: doc.data().status,
+        id: doc.id,
+      };
+      arrOrders.push(objOrder);
+    });
+    callback(arrOrders);
+  });
 
 export const updateStatus = (id, newStatus) => {
   db.collection('orders').doc(id).update({

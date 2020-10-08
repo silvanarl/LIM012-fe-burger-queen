@@ -210,14 +210,16 @@ const DoOrders = () => {
                   {order.items.reduce((acum, obj) => acum + obj.price * obj.amount, 0)}
                 </span>
               </div>
-              <div className="">
-                <button
-                  className="buttonNone sendAndNullButton"
-                  type="button"
-                  onClick={sendFirestore}
-                >
-                  ENVIAR
-                </button>
+              <div className="flex-around">
+                {/* <a href="/orders"> */}
+                  <button
+                    className="buttonNone sendAndNullButton"
+                    type="button"
+                    onClick={sendFirestore}
+                  >
+                    ENVIAR
+                  </button>
+                {/* </a> */}
                 <button
                   className="buttonNone sendAndNullButton"
                   type="button"

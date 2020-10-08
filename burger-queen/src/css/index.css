@@ -1,7 +1,7 @@
 .flexColumn {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .start {
@@ -20,8 +20,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
   box-sizing: border-box;
@@ -90,7 +91,6 @@
 /* Waiter Choice */
 .headerMain {
   background-color: #422112;
-  text-align: center center;
   text-align: center;
   width: 100vw;
   padding-top: 15px;
@@ -147,8 +147,8 @@
 }
 
 .input-name {
-  width: 250px;
   font-size: 25px;
+  width: 250px;
   height: 40px;
   margin: 3px;
   border-radius: 5px;
@@ -185,6 +185,7 @@
   margin-left: 225px;
   font-size: 40px;
   position: fixed;
+  top: 160px;
 }
 
 .blockEnd {
@@ -223,9 +224,9 @@
 
 .containerOptionFood {
   color: #F1C010;
-  width: 185px;
   margin-left: 25px;
   margin-top: 50px;
+  width: 185px;
   height: 175px;
   border-radius: 25px;
   background-color: #422112;
@@ -304,8 +305,8 @@
 }
 
 .containerQuantityByProducts {
-  height: 40px;
-  width: 30px;
+  width: 40px;
+  height: 30px;
   margin-top: 10px;
   background-color: #fff;
 }

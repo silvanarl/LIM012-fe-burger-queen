@@ -1,4 +1,8 @@
-@mixin width-height($width, $height) {
+@mixin measures($width, $height) {
     width: $width;
     height: $height;
+}
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
 }

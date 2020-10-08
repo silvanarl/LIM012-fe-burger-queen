@@ -4,10 +4,16 @@ import send from '../assets/change-status-order.svg';
 import { updateStatus } from '../controllers/firestore.controller';
 
 const EnteredOrder = ({ enteredOrder }) => {
-  const handleClick = (id) => {
+  const handleClick = (id, status) => {
     enteredOrder.find((obj) => obj.id === id);
-    const newStatus = 'list';
-    updateStatus(id, newStatus);
+    let newStatus;
+    if (status === 'pending') {
+      newStatus = 'ready';
+      updateStatus(id, newStatus);
+    } else if (status === 'ready') {
+      newStatus = 'delivered';
+      updateStatus(id, newStatus);
+    }
   };
   EnteredOrder.propTypes = {
     enteredOrder: PropTypes.arrayOf.isRequired,
@@ -16,7 +22,7 @@ const EnteredOrder = ({ enteredOrder }) => {
   return (
     <div>
       {enteredOrder.map((obj) => (
-        <div className="entered-order-wrapper">
+        <div key={obj.id} className="entered-order-wrapper">
           <div key={obj.id} className="entered-order-container">
             <div className="entered-order-info">
               <p>{obj.name}</p>
@@ -31,7 +37,7 @@ const EnteredOrder = ({ enteredOrder }) => {
                   </li>
                 </ul>
               ))}
-              <button type="button" onClick={() => handleClick(obj.id)}>
+              <button type="button" onClick={() => handleClick(obj.id, obj.status)}>
                 <img src={send} alt="Envía orden a Listo" />
               </button>
             </div>
