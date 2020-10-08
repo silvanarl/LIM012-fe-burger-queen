@@ -120,7 +120,8 @@
   .sendAndNullButton{
    background-color: $brown;
    color:white;
-   @include measures(140px, 60px);
+   @include measures(140px, 70px);
    border-radius: 20px;
-   font-size: 1em;
+   font-size: 1.2em;
+   margin: 0 20px 0 30px;
   }

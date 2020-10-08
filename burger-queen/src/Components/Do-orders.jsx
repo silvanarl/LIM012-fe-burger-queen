@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import useModal from '../hooks/useModal';
 import Background from './Background';
+import Modal from './Modal';
 import AddIcon from '../assets/orderComponentIcons/add-icon.svg';
 import LessIcon from '../assets/orderComponentIcons/less-icon.svg';
 import DeleteIcon from '../assets/orderComponentIcons/delete-icon.svg';
@@ -23,6 +25,8 @@ const DoOrders = () => {
   const [menuData, setMenuData] = useState([]);
   const [drinksData, setDrinksData] = useState([]);
   const [selectType, setSelectType] = useState('0');
+  const { isShowing, toggleModal } = useModal();
+
   const filterSelectType = (str) => {
     setSelectType(str);
   };
@@ -92,6 +96,7 @@ const DoOrders = () => {
   const sendFirestore = () => {
     sendOrder(order);
     setOrder({ ...initialStateOrder });
+    return toggleModal();
   };
 
   const renderComponentTypeFood = () => {
@@ -211,7 +216,6 @@ const DoOrders = () => {
                 </span>
               </div>
               <div className="flex-around">
-                {/* <a href="/orders"> */}
                 <button
                   className="buttonNone sendAndNullButton"
                   type="button"
@@ -219,18 +223,29 @@ const DoOrders = () => {
                 >
                   ENVIAR
                 </button>
-                {/* </a> */}
                 <button
                   className="buttonNone sendAndNullButton"
                   type="button"
                 >
                   ANULAR
                 </button>
+                <a href="/orders">
+                  <button
+                    className="buttonNone sendAndNullButton"
+                    type="button"
+                  >
+                    VER PEDIDOS
+                  </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Modal
+        isShowing={isShowing}
+        hide={toggleModal}
+      />
     </div>
   );
 };

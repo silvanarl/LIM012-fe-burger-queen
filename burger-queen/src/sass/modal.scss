@@ -1,0 +1,48 @@
+@import 'mixin';
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    @include measures(100vw, 100vh);
+    background-color: rgba(19, 18, 18, 0.83);
+    opacity: .5;
+}
+.modal-wrapper {
+    position: fixed;
+    top: 250px;
+    left: 0;
+    z-index: 1050;
+    @include measures(100%, 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+.modal{
+    z-index: 100;
+    background: white;
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 15px;
+    @include measures(300px, 300px);
+    @include flexColumn;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;;
+}
+.modal-span{
+    font-family: $roboto;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.modal-close{
+    @include measures(100px, 50px);
+    border: none;
+    background-color: $backgroundYellow;
+    font-size: 24px;
+    border-radius: 8px;
+    color: $brown;
+}
