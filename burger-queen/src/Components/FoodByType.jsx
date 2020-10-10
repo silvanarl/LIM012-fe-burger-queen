@@ -68,16 +68,16 @@ ButtonSelectFood.propTypes = {
 };
 
 BreackfastView.propTypes = {
-  breakfastData: PropTypes.arrayOf.isRequired,
+  breakfastData: PropTypes.arrayOf(PropTypes.object).isRequired,
   addPropertiesToOrder: PropTypes.func.isRequired,
 };
 
 MenuView.propTypes = {
-  menuData: PropTypes.arrayOf.isRequired,
+  menuData: PropTypes.arrayOf(PropTypes.object).isRequired,
   addPropertiesToOrder: PropTypes.func.isRequired,
 };
 
 DrinksView.propTypes = {
-  drinksData: PropTypes.arrayOf.isRequired,
+  drinksData: PropTypes.arrayOf(PropTypes.object).isRequired,
   addPropertiesToOrder: PropTypes.func.isRequired,
 };

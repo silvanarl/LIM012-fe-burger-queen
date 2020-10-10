@@ -27,7 +27,7 @@ const ReadyOrder = ({ readyOrder }) => (
 );
 
 ReadyOrder.propTypes = {
-  readyOrder: PropTypes.arrayOf.isRequired,
+  readyOrder: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ReadyOrder;

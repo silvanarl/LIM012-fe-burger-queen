@@ -124,15 +124,15 @@ const DoOrders = () => {
         );
     }
   };
-  MenuView.propTypes = {
-    menuData: PropTypes.arrayOf.isRequired,
-  };
-  BreackfastView.propTypes = {
-    breakfastData: PropTypes.arrayOf.isRequired,
-  };
-  DrinksView.propTypes = {
-    drinksData: PropTypes.arrayOf.isRequired,
-  };
+  // MenuView.propTypes = {
+  //   menuData: PropTypes.arrayOf.isRequired,
+  // };
+  // BreackfastView.propTypes = {
+  //   breakfastData: PropTypes.arrayOf.isRequired,
+  // };
+  // DrinksView.propTypes = {
+  //   drinksData: PropTypes.arrayOf.isRequired,
+  // };
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
