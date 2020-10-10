@@ -1,4 +1,3 @@
-import 'firebase/firestore';
 import Firebase from '../firebase-config';
 
 const db = Firebase.firestore();
@@ -45,15 +44,14 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
   return foodDrinks;
 });
 
-export const sendOrder = (obj) => {
-  db.collection('orders').doc().set(obj)
-    .then(() => {
-      console.log('se envio la orden con éxito');
-    })
-    .catch((error) => {
-      console.log('Ocurrió un error al enviar la order', error);
-    });
-};
+export const sendOrder = (obj) => db
+  .collection('orders').doc().set(obj)
+  .then(() => {
+    console.log('se envio la orden con éxito');
+  })
+  .catch((error) => {
+    console.log('Ocurrió un error al enviar la order', error);
+  });
 
 export const getOrdersReady = (callback) => db.collection('orders')
   .where('status', '==', 'ready')
