@@ -3,6 +3,7 @@ import { getOrders, getOrdersReady } from '../controllers/firestore.controller';
 import Background from '../Components/Background';
 import EnteredOrder from '../Components/OrderKitchen';
 import ReadyOrder from '../Components/Ready';
+import Exit from '../Components/Exit';
 
 const Kitchen = () => {
   const [enteredOrder, setEnteredOrder] = useState([]);
@@ -25,9 +26,14 @@ const Kitchen = () => {
         </div>
       </div>
       <div className="flex-around">
-        <EnteredOrder enteredOrder={enteredOrder} />
-        <ReadyOrder readyOrder={readyOrder} />
+        <div className="containter-orders">
+          <EnteredOrder enteredOrder={enteredOrder} />
+        </div>
+        <div className="containter-orders">
+          <ReadyOrder readyOrder={readyOrder} />
+        </div>
       </div>
+      <Exit />
     </div>
   );
 };

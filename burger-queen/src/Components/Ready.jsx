@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 
 const ReadyOrder = ({ readyOrder }) => (
   <div>
+    {console.log(readyOrder)}
     {readyOrder.map((obj) => (
-      <div key={obj.id} className="entered-order-wrapper">
-        <div key={obj.id} className="entered-order-container">
-          <div className="entered-order-info">
-            <p>{obj.name}</p>
-            <p>{obj.hour.toLocaleString()}</p>
+      <div key={obj.id} className="order-wrapper">
+        <div key={obj.id} className="order-container">
+          <div className="order-info">
+            <p className="order-info-name">{obj.name.toUpperCase()}</p>
+            {/* <p>{obj.hour}</p> */}
             {obj.items.map((objItem, index) => (
-              <ul className="entered-order-list" key={index}>
-                <li>
-                  <div className="entered-order-list-amount">
+              <ul className="order-list" key={index}>
+                <li className="flexRow">
+                  <div className="order-list-amount">
                     <span>{objItem.amount}</span>
                   </div>
-                  <span>{objItem.name}</span>
+                  <span className="mg-left-10">{objItem.name}</span>
                 </li>
               </ul>
             ))}

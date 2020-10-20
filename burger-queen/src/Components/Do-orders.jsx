@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import useModal from '../hooks/useModal';
+import firebase from '../firebase-config';
 import Background from './Background';
 import Modal from './Modal';
 import AddIcon from '../assets/orderComponentIcons/add-icon.svg';
@@ -30,10 +30,11 @@ const DoOrders = () => {
   const filterSelectType = (str) => {
     setSelectType(str);
   };
+  const time = firebase.firestore.Timestamp.fromDate(new Date());
   const initialStateOrder = {
     name: '',
     items: [],
-    hour: new Date().getTime(),
+    hour: new Date(),
     status: 'pending',
   };
   const [order, setOrder] = useState(initialStateOrder);
@@ -124,15 +125,6 @@ const DoOrders = () => {
         );
     }
   };
-  // MenuView.propTypes = {
-  //   menuData: PropTypes.arrayOf.isRequired,
-  // };
-  // BreackfastView.propTypes = {
-  //   breakfastData: PropTypes.arrayOf.isRequired,
-  // };
-  // DrinksView.propTypes = {
-  //   drinksData: PropTypes.arrayOf.isRequired,
-  // };
 
   useEffect(() => {
     getPriceAndNameBreakfast().then((arr) => setBreakfatsData(arr));
@@ -208,6 +200,7 @@ const DoOrders = () => {
                     </div>
                   ))
                 }
+                {console.log(order)}
                 </div>
               </div>
             </div>
