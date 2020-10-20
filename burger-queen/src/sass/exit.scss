@@ -1,0 +1,15 @@
+@import 'mixin';
+@import 'variables';
+
+.button-exit{
+    @include measures(10rem, 4rem);
+    background-color: $backgroundYellow;
+    color: $brown;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    position: absolute;
+    right: 2rem;
+    bottom: 2.5rem;
+    border: 4px solid $brown;
+}

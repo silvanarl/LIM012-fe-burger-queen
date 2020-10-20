@@ -14,5 +14,14 @@
     justify-content: center;
     text-align: center;
 }
+.containter-orders{
+    background-color: $backgroundYellow;
+    @include measures(30rem, 43rem);
+    margin-top: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+}   
 
 

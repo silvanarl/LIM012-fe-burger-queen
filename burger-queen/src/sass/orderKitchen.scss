@@ -1,10 +1,10 @@
 @import 'mixin';
 
-.entered-order-wrapper{
+.order-wrapper{
     max-width: 350px;
     max-height: 500px;
 }
-.entered-order-container{
+.order-container{
     @include measures(100%, 100%);
     background-color: $brown;
     font-size: 18px;
@@ -12,16 +12,16 @@
     padding: 10px;
     margin: 15px;
 }
-.entered-order-info{
+.order-info{
     z-index: 1;
     color: $white;
 }
-.entered-order-list{
+.order-list{
     list-style-type: none;
     padding-left: 10px;
     display: flex;
 }
-.entered-order-list-amount{
+.order-list-amount{
     display: flex;
     background-color: $white;
     color: $brown;
@@ -29,4 +29,12 @@
     border-radius: 5px;
     justify-content: center;
     align-content: center;
+}
+.order-info-name{
+    font-size: 1.5rem;
+}
+.order-button-status{
+    border: none;
+    border-radius: 12px;
+    width: 70px;
 }
