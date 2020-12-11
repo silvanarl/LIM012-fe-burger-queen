@@ -510,6 +510,22 @@ button {
   border: 4px solid #422112;
 }
 
+.input-login {
+  width: 12rem;
+  height: 3rem;
+}
+
+.login-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container-form {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   padding: 0;

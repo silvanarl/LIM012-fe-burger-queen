@@ -5,6 +5,7 @@ import PlaceAndViewOrders from './Components/Waiter-choice';
 import DoOrders from './Components/Do-orders';
 import Kitchen from './views/Kitchen';
 import Deliver from './views/Deliver';
+import Login from './views/Login';
 
 const App = () => (
   <Router>
@@ -27,6 +28,9 @@ const App = () => (
         </Route>
         <Route path="/deliver">
           <Deliver />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
       </Switch>
     </div>

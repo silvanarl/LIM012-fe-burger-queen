@@ -1,0 +1,14 @@
+@import 'mixin';
+
+.input-login{
+    @include measures(12rem, 3rem)
+}
+.login-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container-form{
+    display: flex;
+    flex-direction: column;
+}

@@ -131,6 +131,8 @@ const DoOrders = () => {
     getPriceAndNameMenu().then((arr) => setMenuData(arr));
     getPriceAndNameDrinks().then((arr) => setDrinksData(arr));
   }, []);
+  console.log('getpriceandbreakfast', getPriceAndNameBreakfast());
+
   return (
     <div>
       <Background />
@@ -200,7 +202,8 @@ const DoOrders = () => {
                     </div>
                   ))
                 }
-                {console.log(order)}
+                  {console.log(order)}
+                  {console.log('hora', order.hour.toLocaleTimeString())}
                 </div>
               </div>
             </div>
